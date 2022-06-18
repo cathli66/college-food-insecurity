@@ -1,11 +1,9 @@
 import React from 'react';
 import '../styles/Shelf.scss';
 import Tile from './Tile';
-import { ScrollMenu, VisibilityContext } from 'react-horizontal-scrolling-menu';
 import useDrag from '../components/Drag';
 import wood from '../media/wood.png';
 
-type scrollVisibilityApiType = React.ContextType<typeof VisibilityContext>;
 type item = {
     name: string, 
     location: string, 
