@@ -1,0 +1,19 @@
+.shelf {
+    position: absolute;
+    right: 0px;
+}
+
+.tiles {
+    // width: 1373px;
+    margin-left: 431px;
+    justify-content: right;
+    display: flex;
+    position: relative;
+    flex-direction: horizontal;
+    height: 300px;
+    top: 100px;
+
+    .tile {
+        flex-direction: vertical;
+    }
+}

@@ -1,0 +1,39 @@
+.category {
+    height: 120px;
+    width: 120px;
+}
+
+.restrict {
+    height: 18px;
+}
+
+.card {
+    height: 191px;
+    width: 266px;
+    background-color: #FFF6E2;
+    border: none;
+    padding-left: 20px;
+    padding-top: 20px;
+    margin-left: 47px;
+    border-radius: 15px;
+}
+
+.category {
+    position: relative;
+    left: 170px;
+    bottom: 100px;
+}
+
+.label {
+    width: 240px;
+    height: 83px;
+    background-color: #B5917C;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: horizontal;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    left: 55px;
+    top: -100px;
+}
