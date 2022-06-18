@@ -52,9 +52,9 @@ const Shelf = (
                     </Link> */}
                 </div>
             }
-            <div>
+            {/* <div>
                 <Route path='/showAll' component={ShowAll} />
-            </div>
+            </div> */}
             <img src={wood} alt='shelf' className='shelf'/>
             <div className='tiles'>
                 {items.map((item) => {
