@@ -1,17 +1,23 @@
 .shelf {
-    position: absolute;
-    right: 0px;
+    position: relative;
+    top: 245px;
+    margin-left: 430px;
+}
+
+.row {
+    // background-color: blue;
+    margin-bottom: 80px;
 }
 
 .tiles {
     // width: 1373px;
-    margin-left: 431px;
+    margin-left: 650px;
     justify-content: right;
     display: flex;
     position: relative;
     flex-direction: horizontal;
     height: 300px;
-    top: 100px;
+    top: 0px;
 
     .tile {
         flex-direction: vertical;

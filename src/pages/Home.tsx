@@ -25,7 +25,7 @@ const Home = () => {
             restrict: ['nut', 'gluten', 'dairy'], 
             person: 'person', 
             contact: 'contact', 
-            category: 'meal'
+            category: 'snack'
         },
         {
             name: 'name', 
@@ -35,7 +35,7 @@ const Home = () => {
             restrict: ['nut', 'gluten', 'dairy'], 
             person: 'person', 
             contact: 'contact', 
-            category: 'meal'
+            category: 'drink'
         },
     ]
 

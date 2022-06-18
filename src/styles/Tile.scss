@@ -35,5 +35,22 @@
     align-items: center;
     position: relative;
     left: 55px;
-    top: -100px;
+    top: -90px;
+}
+
+.name {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 27.28px;
+    color: #986649;
+}
+
+.person {
+    font-weight: 400;
+    color: #986649;
+    line-height: 21.82px;
+}
+
+.restriction {
+    margin-right: 9px;
 }

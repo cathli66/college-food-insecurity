@@ -23,8 +23,9 @@ const Shelf = (
     {name: string; items: item[]}
 ) => {
     return (
-        <div>
+        <div className='row'>
             <p className='shelfName'>{name}</p>
+            <img src={wood} alt='shelf' className='shelf'/>
             <div className='tiles'>
                 {items.map((item) => {
                     return (
@@ -34,7 +35,6 @@ const Shelf = (
                     )
                 })}
             </div>
-            <img src={wood} alt='shelf' className='shelf'/>
         </div>
     )
 }
