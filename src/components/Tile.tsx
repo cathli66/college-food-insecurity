@@ -16,6 +16,9 @@ import nut from '../media/nut.png';
 import gluten from '../media/gluten.png';
 import vegan from '../media/vegan.png';
 
+// import dogs
+import dog1 from '../media/dog1.png';
+
 const Tile = (
     {name, location, date, time, restrict, person, contact, category} :
     {name: string; location: string; date: string; time: string; restrict: string[]; person: string; contact: string; category: string}
@@ -72,6 +75,7 @@ const Tile = (
                 <p className='time'>{time}</p>
                 <p className='location'>{location}</p>
             </div>
+            {/* <img src={dog1} alt='dog1' className='dog1'/> */}
         </>
     )
 }

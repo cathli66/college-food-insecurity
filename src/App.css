@@ -1,6 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+
+*{
+  font-family: 'Nunito', sans-serif;
+}
+
 .container h2 {
   text-align: center;
   margin: 25px auto;
+}
+
+.title {
+  font-size: 30px;
 }
 
 .list {
@@ -21,4 +31,8 @@
 
 body {
   background-color: #FCFAF2;
+}
+
+.App {
+
 }
