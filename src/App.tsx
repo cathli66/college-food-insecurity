@@ -1,5 +1,5 @@
 import { Component } from "react";
-import { Switch, Route, Link } from "react-router-dom";
+import { Routes, Route, Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import './App.css';
 
@@ -31,10 +31,10 @@ class App extends Component {
 
         <div className="container mt-3">
           <h2>React Typescript Firestore example</h2>
-          <Switch>
+          <Routes>
             <Route exact path={["/", "/tutorials"]} component={TutorialsList} />
             <Route exact path="/add" component={AddPost} />
-          </Switch>
+          </Routes>
         </div>
       </div>
     );
