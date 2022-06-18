@@ -1,9 +1,10 @@
 import { Component } from "react";
-import { Switch, Route, Link } from "react-router-dom";
+import { Routes, Route, Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import './App.css';
 
-import AddTutorial from "./components/add-tutorial.component";
+// import AddTutorial from "./components/add-tutorial.component";
+import AddPost from "./components/add-post.component";
 import TutorialsList from "./components/tutorials-list.component";
 
 class App extends Component {
@@ -30,10 +31,10 @@ class App extends Component {
 
         <div className="container mt-3">
           <h2>React Typescript Firestore example</h2>
-          <Switch>
+          <Routes>
             <Route exact path={["/", "/tutorials"]} component={TutorialsList} />
-            <Route exact path="/add" component={AddTutorial} />
-          </Switch>
+            <Route exact path="/add" component={AddPost} />
+          </Routes>
         </div>
       </div>
     );
