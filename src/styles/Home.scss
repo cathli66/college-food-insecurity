@@ -2,6 +2,7 @@
     // background-color: blue;
     display: flex;
     flex-direction: horizontal;
+
 }
 
 .left {
@@ -16,5 +17,6 @@
 
 .plant {
     position: relative;
-    background-color: black;
+    left: 40px;
+    top: 20px;
 }

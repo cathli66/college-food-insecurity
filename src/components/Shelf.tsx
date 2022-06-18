@@ -24,7 +24,12 @@ const Shelf = (
 ) => {
     return (
         <div className='row'>
-            <p className='shelfName'>{name}</p>
+            <div className='info'>
+                <p className='shelfName'>{name}</p>
+                <button className='seeAll'>
+                    see all
+                </button>
+            </div>
             <img src={wood} alt='shelf' className='shelf'/>
             <div className='tiles'>
                 {items.map((item) => {

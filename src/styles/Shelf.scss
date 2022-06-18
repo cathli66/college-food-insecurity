@@ -1,7 +1,7 @@
 .shelf {
     position: relative;
     top: 205px;
-    width: 70vw;
+    width: 75vw;
     // margin-left: 160px;
 }
 
@@ -17,24 +17,36 @@
     position: relative;
     left: 0px;
     justify-content: right;
-
-    .shelfName {
+    .info {
+        display: flex;
+        flex-direction: horizontal;
+        justify-content: space-between;
+        padding-right: 15px;
         width: 100%;
+    }
+    .shelfName {
         color: #53301C;
         font-size: 25px;
         font-weight: 700;
+    }
+
+    button {
+        color: #53301C;        
+        border: none;
+        // font-weight: 700;
+        height: 30px;
+        background-color: transparent;
     }
 }
 
 .tiles {
     // width: 65vw;
-    // background-color: blue;
     // margin-left: 406px;
     overflow: scroll;
     display: flex;
     position: relative;
     flex-direction: horizontal;
-    height: 33vh;
+    height: 320px;
     top: 0px;
 
     .tile {
