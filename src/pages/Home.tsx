@@ -61,10 +61,16 @@ const Home = () => {
 
     return (
         <div>
-            <img src={plant} alt='plant'/>
-            <Shelf name='Students' items={example}/>
-            <Shelf name='Dining Halls' items={example}/>
-            <Shelf name='Restaurants' items={example}/>
+            <div className='content'>
+                <div className='left'>
+                    <img src={plant} alt='plant'/>
+                </div>
+                <div className='right'>
+                    <Shelf name='Students' items={example}/>
+                    <Shelf name='Dining Halls' items={example}/>
+                    <Shelf name='Restaurants' items={example}/>
+                </div>
+            </div>
         </div>
     )
 }

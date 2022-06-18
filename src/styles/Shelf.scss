@@ -1,7 +1,8 @@
 .shelf {
     position: relative;
     top: 205px;
-    margin-left: 160px;
+    width: 70vw;
+    // margin-left: 160px;
 }
 
 .row {
@@ -10,18 +11,30 @@
     ::-webkit-scrollbar {
         display: none;
     }
+    width: 75vw;
+    display: flex;
+    flex-direction: vertical;
+    position: relative;
+    left: 0px;
+    justify-content: right;
+
+    .shelfName {
+        width: 100%;
+        color: #53301C;
+        font-size: 25px;
+        font-weight: 700;
+    }
 }
 
 .tiles {
-    width: 1000px;
+    // width: 65vw;
     // background-color: blue;
-    margin-left: 406px;
-    justify-content: left;
+    // margin-left: 406px;
     overflow: scroll;
     display: flex;
     position: relative;
     flex-direction: horizontal;
-    height: 300px;
+    height: 33vh;
     top: 0px;
 
     .tile {
