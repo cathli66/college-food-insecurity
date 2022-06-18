@@ -1,18 +1,23 @@
 .shelf {
     position: relative;
-    top: 245px;
-    margin-left: 430px;
+    top: 205px;
+    margin-left: 160px;
 }
 
 .row {
     // background-color: blue;
     margin-bottom: 80px;
+    ::-webkit-scrollbar {
+        display: none;
+    }
 }
 
 .tiles {
-    // width: 1373px;
-    margin-left: 650px;
-    justify-content: right;
+    width: 1000px;
+    // background-color: blue;
+    margin-left: 320px;
+    justify-content: left;
+    overflow: scroll;
     display: flex;
     position: relative;
     flex-direction: horizontal;

@@ -37,6 +37,26 @@ const Home = () => {
             contact: 'contact', 
             category: 'drink'
         },
+        {
+            name: 'name', 
+            location: 'location', 
+            date: 'date', 
+            time: 'time', 
+            restrict: ['nut', 'gluten', 'dairy'], 
+            person: 'person', 
+            contact: 'contact', 
+            category: 'meal'
+        },
+        {
+            name: 'name', 
+            location: 'location', 
+            date: 'date', 
+            time: 'time', 
+            restrict: ['nut', 'gluten', 'dairy'], 
+            person: 'person', 
+            contact: 'contact', 
+            category: 'meal'
+        },
     ]
 
     return (
