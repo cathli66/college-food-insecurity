@@ -3,6 +3,7 @@ import '../styles/Home.scss';
 import Shelf from '../components/Shelf';
 import Tile from '../components/Tile';
 import plant from '../media/plant.png';
+import {Link} from "react-router-dom";
 
 const Home = () => {
 
@@ -60,16 +61,14 @@ const Home = () => {
     ]
 
     return (
-        <div>
-            <div className='content'>
-                <div className='left'>
-                    <img className='plant' src={plant} alt='plant'/>
-                </div>
-                <div className='right'>
-                    <Shelf name='Students' items={example}/>
-                    <Shelf name='Dining Halls' items={example}/>
-                    <Shelf name='Restaurants' items={example}/>
-                </div>
+        <div className='content'>
+            <div className='left'>
+                <img className='plant' src={plant} alt='plant'/>
+            </div>
+            <div className='right'>
+                <Shelf name='Students' items={example} isHome={true}/>
+                <Shelf name='Dining Halls' items={example} isHome={true}/>
+                <Shelf name='Restaurants' items={example} isHome={true}/>
             </div>
         </div>
     )
