@@ -1,0 +1,22 @@
+.content {
+    // background-color: blue;
+    display: flex;
+    flex-direction: horizontal;
+
+}
+
+.left {
+    width: 25vw;
+}
+.right {
+    padding-left: 1vw;
+    width: 75vw;
+    overflow: hidden;
+
+}
+
+.plant {
+    position: relative;
+    left: 40px;
+    top: 20px;
+}

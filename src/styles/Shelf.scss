@@ -1,0 +1,56 @@
+.shelf {
+    position: relative;
+    top: 205px;
+    width: 75vw;
+    // margin-left: 160px;
+}
+
+.row {
+    // background-color: blue;
+    margin-bottom: 80px;
+    ::-webkit-scrollbar {
+        display: none;
+    }
+    width: 75vw;
+    display: flex;
+    flex-direction: vertical;
+    position: relative;
+    left: 0px;
+    justify-content: right;
+    .info {
+        display: flex;
+        flex-direction: horizontal;
+        justify-content: space-between;
+        padding-right: 15px;
+        width: 100%;
+    }
+    .shelfName {
+        color: #53301C;
+        font-size: 25px;
+        font-weight: 700;
+    }
+
+    button {
+        color: #53301C;        
+        border: none;
+        // font-weight: 700;
+        height: 30px;
+        background-color: transparent;
+    }
+}
+
+.tiles {
+    // width: 65vw;
+    // margin-left: 406px;
+    overflow: scroll;
+    display: flex;
+    position: relative;
+    flex-direction: horizontal;
+    height: 320px;
+    top: 0px;
+    width: 75vw;
+
+    .tile {
+        flex-direction: vertical;
+    }
+}
