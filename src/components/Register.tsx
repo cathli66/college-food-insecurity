@@ -11,11 +11,13 @@ const Register = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");
+  const [myfood, setMyFood] = useState([]);
+  const [attending, setAttending] = useState([]);
   const [user, loading, error] = useAuthState(auth);
   const navigate = useNavigate();
   const register = () => {
     if (!name) alert("Please enter name");
-    registerWithEmailAndPassword(name, email, password);
+    registerWithEmailAndPassword(name, email, password, myfood, attending);
   };
   useEffect(() => {
     if (loading) return;
