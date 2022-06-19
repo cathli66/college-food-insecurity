@@ -6,6 +6,7 @@ import FoodPostData from '../types/post.type';
 import { Link } from "react-router-dom";
 import Logout from '../components/Logout';
 import '../styles/AddPost.scss'
+import plant2 from '../media/plant.png'
 
 
 type Props = {};
@@ -105,17 +106,25 @@ export default class AddPost extends Component<Props, State> {
               <p className='navlogo'>let's roll</p>
             </li>
             <li className="nav-item">
-              <Logout></Logout>
+              <div className='logoutbtn'>
+                <div className="helper2">
+                  <Logout></Logout>
+                </div>
+              </div>
             </li>
             <li className="nav-item">
-              <Link to={"/home"} className="nav-link">
-                Home
-              </Link>
+              <div className="helper2">
+                <Link to={"/home"} className="nav-link">
+                  Home
+                </Link>
+              </div>
             </li>
             <li className="nav-item">
-              <Link to={"/add"} className="nav-link">
-                Add
-              </Link>
+              <div className="helper2">
+                <Link to={"/add"} className="nav-link">
+                  Add
+                </Link>
+              </div>
             </li>
           </div>
         </nav>
@@ -175,131 +184,138 @@ export default class AddPost extends Component<Props, State> {
             }
             }
           >
-
-            <div className="formcard">
-              <p className="head">create new event</p>
-              <div className="cols">
-                <div className="firstcol">
-                  <p className="colhead">event details</p>
-                  <div>
-                    <label className="fieldlabel">
-                      event name + description:&nbsp;&nbsp;
-                      <input type="text" name="name" required />
-                    </label>
+            
+            <div className="formatting">
+              <div>
+            <img className='plant2' src={plant2} alt='plant2' />
+            </div>
+              <div className="formcard">
+                <p className="head">create new event</p>
+                <div className="cols">
+                  <div className="firstcol">
+                    <p className="colhead">event details</p>
+                    <div>
+                      <label className="fieldlabel">
+                        event name + description:&nbsp;&nbsp;
+                        <input type="text" name="name" required />
+                      </label>
+                    </div>
+                    <div>
+                      <label className="fieldlabel">
+                        location:&nbsp;&nbsp;
+                        <input type="text" name="location" required />
+                      </label>
+                    </div>
+                    <div>
+                      <label className="fieldlabel">
+                        date:&nbsp;&nbsp;
+                        <input type="date" name="date" required />
+                      </label>
+                    </div>
+                    <div>
+                      <label className="fieldlabel">
+                        end time:&nbsp;&nbsp;
+                        <input type="time" name="time" required />
+                      </label>
+                    </div>
+                    <div>
+                      <label className="fieldlabel">
+                        food category:&nbsp;
+                        <ul className="category-list">
+                          {this.categories.map((name, index) => {
+                            return (
+                              <li key={index}>
+                                <div className="category-list-item">
+                                  <input
+                                    type="radio"
+                                    id={name}
+                                    name={name}
+                                    value={name}
+                                    checked={this.state.category === name}
+                                    onChange={this.onChangeCategory}
+                                  />
+                                  <label htmlFor={name}>{name}</label>
+                                </div>
+                              </li>
+                            );
+                          })}
+                        </ul>
+                      </label>
+                    </div>
+                    <div className='dietres'>
+                      <label className="fieldlabel">
+                        dietary restrictions:
+                        <ul className="dietary-list">
+                          {this.restrictions.map((name, index) => {
+                            return (
+                              <li key={index}>
+                                <div className="dietary-list-item">
+                                  <input
+                                    type="checkbox"
+                                    id={name}
+                                    name={name}
+                                    value={name}
+                                  // checked={this.checkedStateRestrict[index]}
+                                  // checked={true}
+                                  // onChange={() => this.onChangeRestrict(index)}
+                                  />
+                                  <label htmlFor={name}>{name}</label>
+                                </div>
+                              </li>
+                            );
+                          })}
+                        </ul>
+                      </label>
+                    </div>
                   </div>
-                  <div>
-                    <label className="fieldlabel">
-                      location:&nbsp;&nbsp;
-                      <input type="text" name="location" required />
-                    </label>
-                  </div>
-                  <div>
-                    <label className="fieldlabel">
-                      date:&nbsp;&nbsp;
-                      <input type="date" name="date" required />
-                    </label>
-                  </div>
-                  <div>
-                    <label className="fieldlabel">
-                      end time:&nbsp;&nbsp;
-                      <input type="time" name="time" required />
-                    </label>
-                  </div>
-                  <div>
-                    <label className="fieldlabel">
-                      food category:&nbsp;
-                      <ul className="category-list">
-                        {this.categories.map((name, index) => {
-                          return (
-                            <li key={index}>
-                              <div className="category-list-item">
-                                <input
-                                  type="radio"
-                                  id={name}
-                                  name={name}
-                                  value={name}
-                                  checked={this.state.category === name}
-                                  onChange={this.onChangeCategory}
-                                />
-                                <label htmlFor={name}>{name}</label>
-                              </div>
-                            </li>
-                          );
-                        })}
-                      </ul>
-                    </label>
-                  </div>
-                  <div className='dietres'>
-                    <label className="fieldlabel">
-                      dietary restrictions:
-                      <ul className="dietary-list">
-                        {this.restrictions.map((name, index) => {
-                          return (
-                            <li key={index}>
-                              <div className="dietary-list-item">
-                                <input
-                                  type="checkbox"
-                                  id={name}
-                                  name={name}
-                                  value={name}
-                                // checked={this.checkedStateRestrict[index]}
-                                // checked={true}
-                                // onChange={() => this.onChangeRestrict(index)}
-                                />
-                                <label htmlFor={name}>{name}</label>
-                              </div>
-                            </li>
-                          );
-                        })}
-                      </ul>
-                    </label>
-                  </div>
-                </div>
-                <div className="secondcol">
-                  <p className="colhead">your information</p>
-                  <div>
-                    <label>
-                      your name:&nbsp;&nbsp;
-                      <input type="text" name="person" required />
-                    </label>
-                  </div>
-                  <div>
-                    <label>
-                      who are you posting as?   
-                      <ul className="type-list">
-                        {this.types.map((name, index) => {
-                          return (
-                            <li key={index}>
-                              <div className="type-list-item">
-                                <input
-                                  type="radio"
-                                  id={name}
-                                  name={name}
-                                  value={name}
-                                  checked={this.state.type === name}
-                                  onChange={this.onChangeType}
-                                />
-                                <label htmlFor={name}>{name}</label>
-                              </div>
-                            </li>
-                          );
-                        })}
-                      </ul>
-                    </label>
-                  </div>
-                  <div>
-                    <label>
-                      your contact info:&nbsp;&nbsp;
-                      <input type="text" name="contact" required />
-                    </label>
-                  </div>
-                  <div>
-                    <input className='subbtn' type="submit" value="Create" />
+                  <div className="secondcol">
+                    <p className="colhead">your information</p>
+                    <div>
+                      <label>
+                        your name:&nbsp;&nbsp;
+                        <input type="text" name="person" required />
+                      </label>
+                    </div>
+                    <div>
+                      <label>
+                        who are you posting as?
+                        <ul className="type-list">
+                          {this.types.map((name, index) => {
+                            return (
+                              <li key={index}>
+                                <div className="type-list-item">
+                                  <input
+                                    type="radio"
+                                    id={name}
+                                    name={name}
+                                    value={name}
+                                    checked={this.state.type === name}
+                                    onChange={this.onChangeType}
+                                  />
+                                  <label htmlFor={name}>{name}</label>
+                                </div>
+                              </li>
+                            );
+                          })}
+                        </ul>
+                      </label>
+                    </div>
+                    <div>
+                      <label>
+                        your contact info:&nbsp;&nbsp;
+                        <input type="text" name="contact" required />
+                      </label>
+                    </div>
+                    <div>
+                      <input className='subbtn' type="submit" value="Create" />
+                    </div>
                   </div>
                 </div>
               </div>
+              
             </div>
           </form>
+
         )
         }
       </div>

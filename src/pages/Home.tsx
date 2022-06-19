@@ -58,7 +58,9 @@ const Home = () => {
                     </li>
                     <li className="nav-item">
                         <div className='helper'>
+                            <div className='logoutbtn'>
                             <Logout></Logout>
+                            </div>
                         </div>
                     </li>
                     <li className="nav-item">
