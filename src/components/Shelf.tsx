@@ -8,8 +8,8 @@ import ShowAll from '../pages/ShowAll'
 import FoodPostData from "../types/post.type";
 
 const Shelf = (
-    {name, items, isHome} :
-    {name: string; items: FoodPostData[]; isHome: boolean}
+    { name, items, isHome }:
+        { name: string; items: FoodPostData[]; isHome: boolean }
 ) => {
 
     // const navigate = useNavigate();
@@ -27,23 +27,12 @@ const Shelf = (
             {isHome &&
                 <div className='info'>
                     <p className='shelfName'>{name}</p>
-                    <Link to={{
-
-                    }} className='seeAll'>see all</Link>
-                    {/* <Link to={{
-                        pathname: '../pages/ShowAll',
-                        state: {
-                            items: {items},
-                        },
-                    }} 
-                    className='seeAll'> 
+                    <Link to={"/feed"} className="nav-link">
                         see all
-                    </Link> */}
+                    </Link>
+
                 </div>
             }
-            {/* <div>
-                <Route path='/showAll' component={ShowAll} />
-            </div> */}
             <img src={wood} alt='shelf' className='shelf' />
             <div className='tiles'>
                 {items.map((item) => {

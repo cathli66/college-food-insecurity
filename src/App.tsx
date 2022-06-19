@@ -10,7 +10,6 @@ import Login from '../src/components/Login';
 import Register from '../src/components/Register';
 import Reset from '../src/components/Reset';
 import AddPost from "./components/AddPost";
-import PostDataService from "./services/food-post.service";
 import FoodPostData from "./types/post.type";
 
 type Props = {};
