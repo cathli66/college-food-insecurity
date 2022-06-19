@@ -1,5 +1,5 @@
 import { Component } from "react";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import './App.css';
 import '../src/components/Shelf';
@@ -101,7 +101,8 @@ class App extends Component<Props, State> {
               <Route path="/home" element={<Home />} />
               <Route path="/reset" element={<Reset />} />
               <Route path="/register" element={<Register />} />
-              <Route path="/feed" element={<ShowAll items_promise={PostDataService.getAll()} />} />
+              <Route path="/add" element={<AddPost />} />
+              <Route path="/feed" element={<ShowAll />} />
             </Routes>
           </Router>
         </div>
