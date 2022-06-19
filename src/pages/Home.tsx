@@ -39,7 +39,7 @@ const Home = () => {
     onAuthStateChanged(auth, (user) => {
         if (user) {
             console.log(getUserInfo(user.uid));
-            <p>{userInfo.name}</p>
+
         } else {
             return;
         }
