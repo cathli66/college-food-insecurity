@@ -13,7 +13,6 @@ class PostDataService {
         items.push({
           id: doc.id,
           name: doc.data().name,
-          description: doc.data().description,
           location: doc.data().location,
           date: doc.data().data,
           time: doc.data().time,

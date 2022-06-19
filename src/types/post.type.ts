@@ -3,7 +3,6 @@
 export default interface FoodPostData {
   id?: string | null,
   name: string,
-  description: string,
   location: string,
   date: string,
   time: string,

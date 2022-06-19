@@ -23,7 +23,6 @@ export default class AddPost extends Component<Props, State> {
 
     this.state = {
       name: "",
-      description: "",
       location: "",
       date: "",
       time: "",
@@ -45,7 +44,6 @@ export default class AddPost extends Component<Props, State> {
   savePost() {
     let data = {
       name: this.state.name,
-      description: this.state.description,
       location: this.state.location,
       date: this.state.date,
       time: this.state.time,
@@ -70,7 +68,6 @@ export default class AddPost extends Component<Props, State> {
   newPost() {
     this.setState({
       name: "",
-      description: "",
       location: "",
       date: "",
       time: "",
@@ -135,7 +132,6 @@ export default class AddPost extends Component<Props, State> {
 
               this.setState({
                 name: target.name.value,
-                description: target.description.value,
                 location: target.location.value,
                 date: target.date.value,
                 time: target.time.value,
