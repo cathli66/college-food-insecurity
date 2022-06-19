@@ -18,7 +18,7 @@ import {
   where,
   addDoc,
 } from "firebase/firestore";
-
+import FoodPostData from "./types/post.type"
 let config = {
   apiKey: "AIzaSyAqjO51mClXfXbu72STXh61he4DFIQ62hM",
   authDomain: "college-food-insecurity.firebaseapp.com",
@@ -63,7 +63,7 @@ const logInWithEmailAndPassword = async (email: string, password: string) => {
   }
 };
 
-const registerWithEmailAndPassword = async (name: string, email: string, password: string) => {
+const registerWithEmailAndPassword = async (name: string, email: string, password: string, myfood: FoodPostData[], attending: FoodPostData[]) => {
   try {
     const res = await createUserWithEmailAndPassword(auth, email, password);
     const user = res.user;
@@ -72,6 +72,8 @@ const registerWithEmailAndPassword = async (name: string, email: string, passwor
       name,
       authProvider: "local",
       email,
+      myfood,
+      attending
     });
   } catch (err: any) {
     console.error(err);

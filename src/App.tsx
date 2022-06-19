@@ -1,4 +1,4 @@
-import { Component } from "react";
+import { Component, useEffect, useState } from "react";
 import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import './App.css';
@@ -7,102 +7,33 @@ import '../src/components/Tile';
 import Home from '../src/pages/Home';
 import ShowAll from '../src/pages/ShowAll';
 import Login from '../src/components/Login';
-
 import Register from '../src/components/Register';
-
 import Reset from '../src/components/Reset';
-import { collection, query, where, onSnapshot } from "firebase/firestore";
-import { doc, getDoc } from "firebase/firestore";
-
-// import AddTutorial from "./components/add-tutorial.component";
 import AddPost from "./components/AddPost";
-// import TutorialsList from "./components/tutorials-list.component";
-import PostDataService from "./services/food-post.service";
 import FoodPostData from "./types/post.type";
+import PostDataService from "./services/food-post.service";
 
-// let example = [
-//   {
-//     name: 'name',
-//     location: 'location',
-//     date: 'date',
-//     time: 'time',
-//     restrict: ['nut', 'gluten', 'dairy'],
-//     person: 'person',
-//     contact: 'contact',
-//     category: ['meal']
-//   },
-//   {
-//     name: 'name',
-//     location: 'location',
-//     date: 'date',
-//     time: 'time',
-//     restrict: ['nut', 'gluten', 'dairy'],
-//     person: 'person',
-//     contact: 'contact',
-//     category: ['snack']
-//   },
-//   {
-//     name: 'name',
-//     location: 'location',
-//     date: 'date',
-//     time: 'time',
-//     restrict: ['nut', 'gluten', 'dairy'],
-//     person: 'person',
-//     contact: 'contact',
-//     category: ['drink']
-//   },
-//   {
-//     name: 'name',
-//     location: 'location',
-//     date: 'date',
-//     time: 'time',
-//     restrict: ['nut', 'gluten', 'dairy'],
-//     person: 'person',
-//     contact: 'contact',
-//     category: ['meal']
-//   },
-//   {
-//     name: 'name',
-//     location: 'location',
-//     date: 'date',
-//     time: 'time',
-//     restrict: ['nut', 'gluten', 'dairy'],
-//     person: 'person',
-//     contact: 'contact',
-//     category: ['meal']
-//   },
-// ]
 
-type Props = {};
+type Props = {}
 
 type State = {
   data: FoodPostData[] | null
 };
 
 class App extends Component<Props, State> {
-  // constructor(props: Props) {
-  //   super(props);
-  //   this.state = {data: null};
-  // }
-
-  // componentDidMount() {
-  //   PostDataService.getAll().then(
-  //     (value: FoodPostData[]) => 
-  //     this.setState({ data: value })
-  //   );
-  // }
-
   render() {
       return (
         <div>
           <Router>
             <Routes>
               <Route path="/" element={<Login />} />
-              <Route path="/home" element={<Home />} />
+              <Route path="/home" element={<Home/>} />
               <Route path="/reset" element={<Reset />} />
               <Route path="/register" element={<Register />} />
               <Route path="/add" element={<AddPost />} />
-              <Route path="/feed" element={<ShowAll />} />
+              <Route path="/feed/student" element={<ShowAll items_promise={PostDataService.getAllStudent()}/>} />
+              <Route path="/feed/dining" element={<ShowAll items_promise={PostDataService.getAllHall()}/>} />
+              <Route path="/feed/restaurant" element={<ShowAll items_promise={PostDataService.getAllRestaurant()}/>} />
             </Routes>
           </Router>
         </div>
@@ -128,12 +59,24 @@ class App extends Component<Props, State> {
 
         <div className="container mt-3">
           <h2>React Typescript Firestore example</h2>
+=======
+    return (
+      <div>
+        <Router>
+>>>>>>> d949fb2bbd425ac5a1f7e46b4a6a3f0f35c13cae
           <Routes>
-            <Route exact path={["/", "/tutorials"]} component={TutorialsList} />
-            <Route exact path="/add" component={AddPost} />
+            <Route path="/" element={<Login />} />
+            <Route path="/home" element={<Home />} />
+            <Route path="/reset" element={<Reset />} />
+            <Route path="/register" element={<Register />} />
+            <Route path="/add" element={<AddPost />} />
+            <Route path="/feed" element={<ShowAll />} />
           </Routes>
-        </div> */
-      
-  }
+        </Router>
+      </div>
+    );
+  }  */
+
+}
 
 export default App;

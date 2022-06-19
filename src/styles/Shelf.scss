@@ -5,6 +5,19 @@
     // margin-left: 160px;
 }
 
+.seeAll {
+    color: #53301C;
+    // text-decoration: none;
+    p {
+        text-decoration: none;
+        color: #53301C;
+    }
+
+    p:hover {
+        text-decoration: none;
+    }
+}
+
 .row {
     // background-color: blue;
     margin-bottom: 80px;
