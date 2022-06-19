@@ -2,12 +2,12 @@
     // background-color: blue;
     display: flex;
     flex-direction: horizontal;
-
 }
 
 .left {
     width: 25vw;
 }
+
 .right {
     padding-left: 1vw;
     width: 75vw;
@@ -21,7 +21,7 @@
     top: 20px;
 }
 
-.navbar{
+.navbar {
     width: 1600px;
     position: relative;
     right: 600px;
@@ -29,16 +29,21 @@
     display: flex;
 }
 
-.helper{
+.helper {
     position: relative;
     left: 570px;
 }
 
-.homelogo{
+.homelogo {
     position: relative;
     top: -20px;
     font-weight: 700;
     font-size: 50px;
     color: #53301C;
     right: 100px;
+}
+
+.userProfile {
+    margin: 0;
+    padding: 0;
 }

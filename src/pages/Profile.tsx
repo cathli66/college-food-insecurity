@@ -29,8 +29,7 @@ const UserProfile = () => {
   if (!user) return null;
   return (
     <div className='nav-item'>
-      <p className='helper'>Hello</p>
-      <p className='help'>{userInfo?.name}</p>
+      <p className='helper'>{userInfo?.name}</p>
     </div>
   )
 }

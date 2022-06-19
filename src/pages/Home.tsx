@@ -69,15 +69,18 @@ const Home = () => {
                             </Link>
                         </div>
                     </li>
+
                     <li className="nav-item">
                         <div className='helper'>
                             <Link to={"/add"} className="nav-link">
                                 Add
                             </Link>
                         </div>
+
                     </li>
+
                 </div>
-            </nav>
+            </nav >
 
             <div className='content'>
 
@@ -92,7 +95,7 @@ const Home = () => {
                     </div>
                 </div>
             </div>
-        </div>
+        </div >
 
     );
 
