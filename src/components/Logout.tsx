@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { auth } from "../firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { signOut } from "firebase/auth";
+import '../styles/Logout.scss'
 
 const Logout = () => {
   const [user, loading, error] = useAuthState(auth);
@@ -19,7 +20,7 @@ const Logout = () => {
   return (
 
     <button
-      className="login__btn"
+      className="logout__btn"
       onClick={() => signOut(auth)}
     >
       Logout

@@ -73,7 +73,7 @@ const Tile = (
             }
             <div className='label'>
                 <p className='date'>{date}</p>
-                <p className='time'>{time}</p>
+                <p className='time'>{time}<br></br></p>
                 <p className='location'>{location}</p>
             </div>
             {/* <img src={dog1} alt='dog1' className='dog1'/> */}
