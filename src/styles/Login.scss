@@ -1,0 +1,89 @@
+.logincard {
+    position: relative;
+    margin: auto;
+    width: 475px;
+    height: 575px;
+    margin-top: 100px;
+    background-color: #FFF3DA;
+    border-radius: 15px;
+    padding-top: 5px;
+}
+
+.custlabel {
+    line-height: 10px;
+    color: #986649;
+}
+
+.logoimg {
+    position: relative;
+    width: 75px;
+    left: 55px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    margin: auto;
+}
+
+.logotitle {
+    font-weight: 700;
+    font-size: 50px;
+    color: #53301C;
+    top: 20px;
+    left: 105px;
+    width: 50%;
+    position: relative;
+    margin-bottom: 35px;
+}
+
+.login {
+    padding-left: 45px;
+    padding-right: 45px;
+}
+
+.login__textBox {
+    border: 1px solid #986649;
+    border-radius: 5px;
+    background-color: #FFFDF5;
+    padding-right: 25px;
+    width: 390px;
+    height: 40px;
+    margin-bottom: 25px;
+}
+
+.login__btn {
+    border-radius: 5px;
+    background-color: #986649;
+    border: none;
+    width: 390px;
+    height: 40px;
+    color: #FFFDF5;
+    font-weight: 600;
+    margin-bottom: 25px;
+}
+
+.forgpw {
+    position: relative;
+    //padding-top: -20px;
+    color: #986649;
+    top: -20px;
+    font-size: 14px;
+    text-align: right;
+    right: -280px;
+}
+
+.register {
+    color: #986649;
+    text-align: center;
+}
+
+.reglink {
+    color: #986649;
+}
+
+.orsignin {
+    color: #986649;
+    text-align: center;
+    margin-bottom: 25px;
+}
