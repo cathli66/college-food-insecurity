@@ -4,6 +4,9 @@ import PostDataService from "../services/food-post.service";
 import { getItemsPos } from 'react-horizontal-scrolling-menu';
 import React, { useState, useEffect } from 'react';
 import '../styles/ShowAll.scss'
+import { Link, useNavigate } from "react-router-dom";
+import Logout from '../components/Logout';
+import UserProfile from "./Profile"
 
 const ShowAll = (
     {items_promise} :
@@ -224,9 +227,41 @@ useEffect ( () => {
 
     return (
         <>
-        <div className='header'>
-                <p className='title'>let's roll</p>
-        </div>
+        <nav className="navbar navbar-expand">
+                <div className="navbar-nav mr-auto">
+                    <li className="nav-item">
+                        <p className='homelogo'>let's roll</p>
+                    </li>
+                    <li className="nav-item">
+                        <div className='helper'>
+                            <div className='logoutbtn'>
+                            <Logout></Logout>
+                            </div>
+                        </div>
+                    </li>
+                    <li className="nav-item">
+                        <div className='helper'>
+                            <Link to={"/home"} className="nav-link">
+                                Home
+                            </Link>
+                        </div>
+                    </li>
+
+                    <li className="nav-item">
+                        <div className='helper'>
+                            <Link to={"/add"} className="nav-link">
+                                Add
+                            </Link>
+                        </div>
+
+                    </li>
+
+                    <li className="nav-item">
+                        <UserProfile />
+                    </li>
+
+                </div>
+            </nav >
         <div className='showAll'>
             <div className='filters'>
                 <p className='filtersTitle'>filter by</p>
