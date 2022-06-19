@@ -80,20 +80,27 @@ const Home = () => {
             <nav className="navbar navbar-expand">
                 <div className="navbar-nav mr-auto">
                     <li className="nav-item">
-                        <p className='title'>let's roll</p>
+                        <p className='homelogo'>let's roll</p>
                     </li>
+
                     <li className="nav-item">
+                    <div className='helper'>
                         <Logout></Logout>
+                        </div>
                     </li>
                     <li className="nav-item">
+                    <div className='helper'>
                         <Link to={"/home"} className="nav-link">
                             Home
                         </Link>
+                        </div>
                     </li>
                     <li className="nav-item">
+                    <div className='helper'>
                         <Link to={"/add"} className="nav-link">
                             Add
                         </Link>
+                        </div>
                     </li>
                 </div>
             </nav>
