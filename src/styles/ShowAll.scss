@@ -1,0 +1,47 @@
+.filters {
+    padding-top: 45px;
+    width: 30vw;
+    padding-left: 45px;
+
+    .filtersTitle {
+        font-size: 25px;
+        font-weight: 600;
+        color: #53301C
+    }
+
+    .subtitle {
+        font-size: 20px;
+        color: #53301C;
+        height: 20px;
+    }
+
+    .foodFilters {
+        padding-top: 40px;
+    }
+}
+
+.shelves {
+    width: 70vw;
+    display: flex;
+    flex-direction: vertical;
+}
+
+.showAll {
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+
+}
+
+.filter {
+    padding-left: 20px;
+    display: flex;
+    flex-direction: horizontal;
+    align-items: center;
+    height: 27px;
+    
+    p{
+        height: 8px;
+        padding-left: 5px;
+    }
+}

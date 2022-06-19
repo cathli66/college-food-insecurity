@@ -3,7 +3,7 @@ import '../styles/Shelf.scss';
 import Tile from './Tile';
 import useDrag from '../components/Drag';
 import wood from '../media/wood.png';
-import { Link, Route } from 'react-router-dom';
+import { Link, Route, Router, Routes } from 'react-router-dom';
 import ShowAll from '../pages/ShowAll'
 import FoodPostData from "../types/post.type";
 
@@ -22,29 +22,32 @@ const Shelf = (
     //       }); 
     // }
 
+    const params = {items: {items}}
+
     return (
+        <>
         <div className='row'>
             {isHome &&
                 <div className='info'>
                     <p className='shelfName'>{name}</p>
-                    <Link to={{
-
-                    }} className='seeAll'>see all</Link>
-                    {/* <Link to={{
-                        pathname: '../pages/ShowAll',
-                        state: {
-                            items: {items},
-                        },
-                    }} 
-                    className='seeAll'> 
-                        see all
-                    </Link> */}
+                    {name === 'students' && 
+                        <Link to='/feed/student' className='seeAll'> 
+                            <p>see all</p>
+                        </Link>
+                    }
+                    {name === 'dining halls' && 
+                        <Link to='/feed/dining' state={{items: items}} className='seeAll'> 
+                            <p>see all</p>
+                        </Link>
+                    }
+                    {name === 'restaurants' && 
+                        <Link to='/feed/restaurant' state={{items: items}} className='seeAll'> 
+                            <p>see all</p>
+                        </Link>
+                    }
                 </div>
             }
-            {/* <div>
-                <Route path='/showAll' component={ShowAll} />
-            </div> */}
-            <img src={wood} alt='shelf' className='shelf' />
+            <img src={wood} alt='shelf' className='shelf'/>
             <div className='tiles'>
                 {items.map((item) => {
                     return (
@@ -55,6 +58,7 @@ const Shelf = (
                 })}
             </div>
         </div>
+    </>
     )
 }
 

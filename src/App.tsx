@@ -1,4 +1,4 @@
-import { Component } from "react";
+import { Component, useEffect, useState } from "react";
 import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import './App.css';
@@ -20,60 +20,9 @@ import AddPost from "./components/AddPost";
 import PostDataService from "./services/food-post.service";
 import FoodPostData from "./types/post.type";
 
-// let example = [
-//   {
-//     name: 'name',
-//     location: 'location',
-//     date: 'date',
-//     time: 'time',
-//     restrict: ['nut', 'gluten', 'dairy'],
-//     person: 'person',
-//     contact: 'contact',
-//     category: ['meal']
-//   },
-//   {
-//     name: 'name',
-//     location: 'location',
-//     date: 'date',
-//     time: 'time',
-//     restrict: ['nut', 'gluten', 'dairy'],
-//     person: 'person',
-//     contact: 'contact',
-//     category: ['snack']
-//   },
-//   {
-//     name: 'name',
-//     location: 'location',
-//     date: 'date',
-//     time: 'time',
-//     restrict: ['nut', 'gluten', 'dairy'],
-//     person: 'person',
-//     contact: 'contact',
-//     category: ['drink']
-//   },
-//   {
-//     name: 'name',
-//     location: 'location',
-//     date: 'date',
-//     time: 'time',
-//     restrict: ['nut', 'gluten', 'dairy'],
-//     person: 'person',
-//     contact: 'contact',
-//     category: ['meal']
-//   },
-//   {
-//     name: 'name',
-//     location: 'location',
-//     date: 'date',
-//     time: 'time',
-//     restrict: ['nut', 'gluten', 'dairy'],
-//     person: 'person',
-//     contact: 'contact',
-//     category: ['meal']
-//   },
-// ]
 
-type Props = {};
+type Props = {}
+
 
 type State = {
   data: FoodPostData[] | null
@@ -98,11 +47,14 @@ class App extends Component<Props, State> {
           <Router>
             <Routes>
               <Route path="/" element={<Login />} />
-              <Route path="/home" element={<Home />} />
+              <Route path="/home" element={<Home/>} />
               <Route path="/reset" element={<Reset />} />
               <Route path="/register" element={<Register />} />
               <Route path="/add" element={<AddPost />} />
-              <Route path="/feed" element={<ShowAll />} />
+              <Route path="/feed/student" element={<ShowAll />} />
+              {/* <Route path="/feed/student" element={<ShowAll items={student}/>} />
+              <Route path="/feed/dining" element={<ShowAll items={dining}/>} />
+              <Route path="/feed/restaurant" element={<ShowAll items={restaurant}/>} /> */}
             </Routes>
           </Router>
         </div>
