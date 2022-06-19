@@ -3,7 +3,6 @@ export default interface UserData {
   id?: string | null,
   name: string,
   email: string,
-  password: string,
   myfood: FoodPostData[],
   attending: FoodPostData[]
   // opento: string[],
