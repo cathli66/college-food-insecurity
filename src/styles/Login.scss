@@ -1,13 +1,52 @@
+@import "./mediaqueries.scss";
+
 .logincard {
-    position: relative;
-    margin: auto;
-    width: 475px;
-    height: 575px;
-    margin-top: 100px;
-    background-color: #FFF3DA;
-    border-radius: 15px;
-    padding-top: 5px;
+    @include xs {
+        position: relative;
+        margin: auto;
+        width: 80%;
+        height: 60%;
+        margin-top: 15%;
+        background-color: #FFF3DA;
+        border-radius: 15px;
+        padding-top: 5px;
+    }
+
+    @include sm {
+        position: relative;
+        margin: auto;
+        width: 475px;
+        height: 575px;
+        margin-top: 100px;
+        background-color: #FFF3DA;
+        border-radius: 15px;
+        padding-top: 5px;
+    }
+
+    @include md {
+        position: relative;
+        margin: auto;
+        width: 475px;
+        height: 575px;
+        margin-top: 100px;
+        background-color: #FFF3DA;
+        border-radius: 15px;
+        padding-top: 5px;
+    }
+
+    @include lg {
+        position: relative;
+        margin: auto;
+        width: 475px;
+        height: 575px;
+        margin-top: 100px;
+        background-color: #FFF3DA;
+        border-radius: 15px;
+        padding-top: 5px;
+    }
 }
+
+
 
 .custlabel {
     line-height: 10px;
@@ -15,26 +54,103 @@
 }
 
 .logoimg {
-    position: relative;
-    width: 75px;
-    left: 55px;
+    @include xs {
+        position: relative;
+        width: 50px;
+        left: 55px;
+    }
+
+    @include sm {
+        position: relative;
+        width: 75px;
+        left: 55px;
+    }
+
+    @include md {
+        position: relative;
+        width: 75px;
+        left: 55px;
+    }
+
+    @include lg {
+        position: relative;
+        width: 75px;
+        left: 55px;
+    }
 }
 
 .logo {
-    display: flex;
-    align-items: center;
-    margin: auto;
+    @include xs {
+        display: flex;
+        align-items: center;
+        margin: auto;
+    }
+
+    @include sm {
+        display: flex;
+        align-items: center;
+        margin: auto;
+    }
+
+    @include md {
+        display: flex;
+        align-items: center;
+        margin: auto;
+    }
+
+    @include lg {
+        display: flex;
+        align-items: center;
+        margin: auto;
+    }
+
 }
 
 .logotitle {
-    font-weight: 700;
-    font-size: 50px;
-    color: #53301C;
-    top: 20px;
-    left: 105px;
-    width: 50%;
-    position: relative;
-    margin-bottom: 35px;
+    @include xs {
+        font-weight: 700;
+        font-size: 30px;
+        color: #53301C;
+        top: 20px;
+        left: 80px;
+        width: 50%;
+        position: relative;
+        margin-bottom: 35px;
+    }
+
+    @include sm {
+        font-weight: 700;
+        font-size: 40px;
+        color: #53301C;
+        top: 20px;
+        left: 105px;
+        width: 50%;
+        position: relative;
+        margin-bottom: 35px;
+    }
+
+    @include md {
+        font-weight: 700;
+        font-size: 50px;
+        color: #53301C;
+        top: 20px;
+        left: 105px;
+        width: 50%;
+        position: relative;
+        margin-bottom: 35px;
+    }
+
+    @include lg {
+        font-weight: 700;
+        font-size: 50px;
+        color: #53301C;
+        top: 20px;
+        left: 105px;
+        width: 50%;
+        position: relative;
+        margin-bottom: 35px;
+    }
+
 }
 
 .login {
@@ -43,34 +159,137 @@
 }
 
 .login__textBox {
-    border: 1px solid #986649;
-    border-radius: 5px;
-    background-color: #FFFDF5;
-    padding-right: 25px;
-    width: 390px;
-    height: 40px;
-    margin-bottom: 25px;
+    @include xs {
+        border: 1px solid #986649;
+        border-radius: 5px;
+        background-color: #FFFDF5;
+        padding-right: 25px;
+        width: 100%;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        margin-bottom: 25px;
+        font-size: 12px;
+    }
+
+    @include sm {
+        border: 1px solid #986649;
+        border-radius: 5px;
+        background-color: #FFFDF5;
+        padding-right: 25px;
+        width: 100%;
+        height: 30%;
+        margin-bottom: 25px;
+    }
+
+    @include md {
+        border: 1px solid #986649;
+        border-radius: 5px;
+        background-color: #FFFDF5;
+        padding-right: 25px;
+        width: 390px;
+        height: 40px;
+        margin-bottom: 25px;
+    }
+
+    @include lg {
+        border: 1px solid #986649;
+        border-radius: 5px;
+        background-color: #FFFDF5;
+        padding-right: 25px;
+        width: 390px;
+        height: 40px;
+        margin-bottom: 25px;
+    }
+
 }
 
 .login__btn {
-    border-radius: 5px;
-    background-color: #986649;
-    border: none;
-    width: 390px;
-    height: 40px;
-    color: #FFFDF5;
-    font-weight: 600;
-    margin-bottom: 25px;
+    @include xs {
+        border-radius: 5px;
+        background-color: #986649;
+        border: none;
+        width: 100%;
+        height: 30px;
+        color: #FFFDF5;
+        font-weight: 600;
+        margin-bottom: 25px;
+    }
+
+    @include sm {
+        border-radius: 5px;
+        background-color: #986649;
+        border: none;
+        width: 100%;
+        height: 40px;
+        color: #FFFDF5;
+        font-weight: 600;
+        margin-bottom: 25px;
+    }
+
+    @include md {
+        border-radius: 5px;
+        background-color: #986649;
+        border: none;
+        width: 390px;
+        height: 40px;
+        color: #FFFDF5;
+        font-weight: 600;
+        margin-bottom: 25px;
+    }
+
+    @include lg {
+        border-radius: 5px;
+        background-color: #986649;
+        border: none;
+        width: 390px;
+        height: 40px;
+        color: #FFFDF5;
+        font-weight: 600;
+        margin-bottom: 25px;
+    }
+
 }
 
 .forgpw {
-    position: relative;
-    //padding-top: -20px;
-    color: #986649;
-    top: -20px;
-    font-size: 14px;
-    text-align: right;
-    right: -280px;
+    @include xs {
+        position: relative;
+
+        color: #986649;
+        top: -10px;
+        font-size: 12px;
+        text-align: right;
+        right: -25%;
+    }
+
+    @include sm {
+        position: relative;
+
+        color: #986649;
+        top: -10px;
+        font-size: 12px;
+        text-align: right;
+        right: -25%;
+    }
+
+    @include md {
+        position: relative;
+
+        color: #986649;
+        top: -10px;
+        font-size: 12px;
+        text-align: right;
+        right: -25%;
+    }
+
+    @include lg {
+        position: relative;
+
+        color: #986649;
+        top: -10px;
+        font-size: 12px;
+        text-align: right;
+        right: -25%;
+    }
 }
 
 .register {
