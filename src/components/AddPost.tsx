@@ -1,4 +1,5 @@
-import { Component } from "react";
+import { ChangeEvent, Component } from "react";
+import { Navigate } from "react-router-dom";
 import PostDataService from "../services/food-post.service";
 import FoodPostData from '../types/post.type';
 
@@ -18,6 +19,7 @@ export default class AddPost extends Component<Props, State> {
     super(props);
     this.savePost = this.savePost.bind(this);
     this.newPost = this.newPost.bind(this);
+    this.onChangeCategory = this.onChangeCategory.bind(this);
 
     this.state = {
       name: "",
@@ -32,6 +34,12 @@ export default class AddPost extends Component<Props, State> {
 
       submitted: false
     };
+  }
+
+  onChangeCategory(e: ChangeEvent<HTMLInputElement>) {
+    this.setState({
+      category: e.target.value,
+    });
   }
 
   savePost() {
@@ -76,6 +84,11 @@ export default class AddPost extends Component<Props, State> {
     });
   }
 
+
+
+
+
+
   render() {
     return (
       <div className="submit-form">
@@ -105,21 +118,20 @@ export default class AddPost extends Component<Props, State> {
 
               const restrictselected = this.restrictions.filter(
                 (r: string, index: number) => {
-                var elem = document.getElementById(r) as HTMLInputElement | null;
-                if(elem != null) {
-                  return elem.checked;
-                }
-                else return false;
-                } );
-
-                const categoryselected = this.categories.filter(
-                  (r: string, index: number) => {
                   var elem = document.getElementById(r) as HTMLInputElement | null;
-                  if(elem != null) {
+                  if (elem != null) {
                     return elem.checked;
                   }
                   else return false;
-                  } );
+                });
+
+              const categorySelected = (changeEvent: { target: { value: any; }; }) => {
+                this.setState({
+                  category: changeEvent.target.value
+                });
+
+              }
+
 
               this.setState({
                 name: target.name.value,
@@ -130,11 +142,12 @@ export default class AddPost extends Component<Props, State> {
                 restrict: restrictselected,
                 person: target.person.value,
                 contact: target.contact.value,
-                category: categoryselected,
+                category: this.state.category,
 
                 submitted: true
               }, () => this.savePost());
-            }}
+            }
+            }
           >
             <div>
               <label>
@@ -175,13 +188,13 @@ export default class AddPost extends Component<Props, State> {
                       <li key={index}>
                         <div className="category-list-item">
                           <input
-                            type="checkbox"
+                            type="radio"
                             id={name}
                             name={name}
                             value={name}
-                            // checked={this.checkedStateRestrict[index]}
-                            // checked={true}
-                            // onChange={() => this.onChangeRestrict(index)}
+                            checked={this.state.category === name}
+                            onChange={this.onChangeCategory}
+
                           />
                           <label htmlFor={name}>{name}</label>
                         </div>
@@ -204,16 +217,16 @@ export default class AddPost extends Component<Props, State> {
                             id={name}
                             name={name}
                             value={name}
-                            // checked={this.checkedStateRestrict[index]}
-                            // checked={true}
-                            // onChange={() => this.onChangeRestrict(index)}
+                          // checked={this.checkedStateRestrict[index]}
+                          // checked={true}
+                          // onChange={() => this.onChangeRestrict(index)}
                           />
                           <label htmlFor={name}>{name}</label>
                         </div>
                       </li>
                     );
                   })}
-                </ul>              
+                </ul>
               </label>
             </div>
             <div>
@@ -232,8 +245,13 @@ export default class AddPost extends Component<Props, State> {
               <input type="submit" value="Create" />
             </div>
           </form>
-        )}
+        )
+        }
       </div>
     );
   }
 }
+function categorySelected(): import("react").ChangeEventHandler<HTMLInputElement> | undefined {
+  throw new Error("Function not implemented.");
+}
+

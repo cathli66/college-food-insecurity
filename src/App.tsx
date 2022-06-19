@@ -11,9 +11,11 @@ import Login from '../src/components/Login';
 import Register from '../src/components/Register';
 
 import Reset from '../src/components/Reset';
+import { collection, query, where, onSnapshot } from "firebase/firestore";
+import { doc, getDoc } from "firebase/firestore";
 
 // import AddTutorial from "./components/add-tutorial.component";
-import AddPost from "./components/add-post.component";
+import AddPost from "./components/AddPost";
 // import TutorialsList from "./components/tutorials-list.component";
 import PostDataService from "./services/food-post.service";
 import FoodPostData from "./types/post.type";

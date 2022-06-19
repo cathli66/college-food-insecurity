@@ -14,7 +14,7 @@ const Shelf = (
 
     // const navigate = useNavigate();
 
-    
+
     // const handleClick = () => {
     //     this.context.router.push({ //browserHistory.push should also work here
     //         pathname: pathToMyComponent,
@@ -24,7 +24,7 @@ const Shelf = (
 
     return (
         <div className='row'>
-            {isHome && 
+            {isHome &&
                 <div className='info'>
                     <p className='shelfName'>{name}</p>
                     <Link to={{
@@ -44,12 +44,12 @@ const Shelf = (
             {/* <div>
                 <Route path='/showAll' component={ShowAll} />
             </div> */}
-            <img src={wood} alt='shelf' className='shelf'/>
+            <img src={wood} alt='shelf' className='shelf' />
             <div className='tiles'>
                 {items.map((item) => {
                     return (
-                        <div className='tile'> 
-                            <Tile name={item.name} location={item.location} date={item.date} time={item.time} restrict={item.restrict} person={item.person} contact={item.contact} category={item.category}/>
+                        <div className='tile'>
+                            <Tile name={item.name} location={item.location} date={item.date} time={item.time} restrict={item.restrict} person={item.person} contact={item.contact} category={item.category} />
                         </div>
                     )
                 })}

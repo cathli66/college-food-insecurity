@@ -13,11 +13,11 @@ const ShowAll = (
     const [items, setItems] = useState<FoodPostData[] | undefined>();
 
     const [restrict, setRestrict] = useState([
-        'dairy', 
-        'soy', 
-        'veg', 
-        'nut', 
-        'gluten', 
+        'dairy',
+        'soy',
+        'veg',
+        'nut',
+        'gluten',
         'vegan',
     ]);
 
@@ -47,22 +47,22 @@ const ShowAll = (
         let finshelves : FoodPostData[][] = [];
         let currshelf : FoodPostData[] = [];
         // finshelves : item[][];
-        for(let n = 0; n < items.length; n++) {
+        for (let n = 0; n < items.length; n++) {
             currshelf.concat(items[n]);
             counter++;
-            if(counter === 3) {
+            if (counter === 3) {
                 counter = 0;
                 finshelves.concat(currshelf);
                 currshelf = [];
             }
         }
-        if(counter > 0) {finshelves.concat(currshelf)}
+        if (counter > 0) { finshelves.concat(currshelf) }
         return finshelves
     }
     
     const shelves : FoodPostData[][] = divshelves(displayed)
 
-    const updateRestrict = () => {}
+    const updateRestrict = () => { }
 
     return (
         <>
@@ -71,61 +71,61 @@ const ShowAll = (
                 <div className="dietFilters">
                     <p>Dietary Restrictions</p>
                     <input
-                    type="checkbox"
-                    name='dairy'
-                    value='dairy free'
+                        type="checkbox"
+                        name='dairy'
+                        value='dairy free'
                     // checked={checkedState[index]}
                     // onChange={() => updateRestrict('dairy')}
                     />
                     dairy free
                     <input
-                    type="checkbox"
-                    // name='dairy'
-                    value='soy free'
+                        type="checkbox"
+                        // name='dairy'
+                        value='soy free'
                     // checked={checkedState[index]}
                     // onChange={() => updateRestrict('soy')}
                     />
                     <input
-                    type="checkbox"
-                    // name='dairy'
-                    value='vegetarian'
+                        type="checkbox"
+                        // name='dairy'
+                        value='vegetarian'
                     // checked={checkedState[index]}
                     // onChange={() => updateRestrict('veg')}
                     />
                     <input
-                    type="checkbox"
-                    // name='dairy'
-                    value='vegan'
+                        type="checkbox"
+                        // name='dairy'
+                        value='vegan'
                     // checked={checkedState[index]}
                     // onChange={() => updateRestrict('vegan')}
                     />
                     <input
-                    type="checkbox"
-                    // name='dairy'
-                    value='nut free'
+                        type="checkbox"
+                        // name='dairy'
+                        value='nut free'
                     // checked={checkedState[index]}
                     // onChange={() => updateRestrict('nut')}
                     />
                     <input
-                    type="checkbox"
-                    // name='dairy'
-                    value='gluten free'
+                        type="checkbox"
+                        // name='dairy'
+                        value='gluten free'
                     // checked={checkedState[index]}
                     // onChange={() => updateRestrict('gluten')}
                     />
                 </div>
                 <div className='foodFilters'>
                     <p>Food Categories</p>
-                        
+
                 </div>
             </div>
             <div className='shelves'>
                 {shelves.map((sublist) => {
-                        return (
-                            <div className='tile'> 
-                                <Shelf items={sublist} name='' isHome={false}/>
-                            </div>
-                        )
+                    return (
+                        <div className='tile'>
+                            <Shelf items={sublist} name='' isHome={false} />
+                        </div>
+                    )
                 })}
             </div>
         </>
