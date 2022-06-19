@@ -5,12 +5,15 @@ import Tile from '../components/Tile';
 import plant from '../media/plant.png';
 import { Link } from "react-router-dom";
 import Logout from '../components/Logout';
+import PostDataService from "../services/food-post.service";
+import IPostData from '../types/post.type'
 
 const Home = () => {
 
-    let example = [
+    let example: IPostData[] = [
         {
             name: 'name',
+            description: 'description',
             location: 'location',
             date: 'date',
             time: 'time',
@@ -21,6 +24,7 @@ const Home = () => {
         },
         {
             name: 'name',
+            description: 'description',
             location: 'location',
             date: 'date',
             time: 'time',
@@ -31,6 +35,7 @@ const Home = () => {
         },
         {
             name: 'name',
+            description: 'description',
             location: 'location',
             date: 'date',
             time: 'time',
@@ -41,6 +46,7 @@ const Home = () => {
         },
         {
             name: 'name',
+            description: 'description',
             location: 'location',
             date: 'date',
             time: 'time',
@@ -51,6 +57,7 @@ const Home = () => {
         },
         {
             name: 'name',
+            description: 'description',
             location: 'location',
             date: 'date',
             time: 'time',

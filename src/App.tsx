@@ -11,63 +11,21 @@ import Login from '../src/components/Login';
 import Register from '../src/components/Register';
 
 import Reset from '../src/components/Reset';
+import { collection, query, where, onSnapshot } from "firebase/firestore";
+import { doc, getDoc } from "firebase/firestore";
 
 // import AddTutorial from "./components/add-tutorial.component";
-import AddPost from "./components/add-post.component";
-import TutorialsList from "./components/tutorials-list.component";
+import AddPost from "./components/AddPost";
+import PostDataService from "../src/services/food-post.service"
+import firebase from "firebase/compat";
+import PostData from "../src/types/post.type"
 
-let example = [
-  {
-    name: 'name',
-    location: 'location',
-    date: 'date',
-    time: 'time',
-    restrict: ['nut', 'gluten', 'dairy'],
-    person: 'person',
-    contact: 'contact',
-    category: 'meal'
-  },
-  {
-    name: 'name',
-    location: 'location',
-    date: 'date',
-    time: 'time',
-    restrict: ['nut', 'gluten', 'dairy'],
-    person: 'person',
-    contact: 'contact',
-    category: 'snack'
-  },
-  {
-    name: 'name',
-    location: 'location',
-    date: 'date',
-    time: 'time',
-    restrict: ['nut', 'gluten', 'dairy'],
-    person: 'person',
-    contact: 'contact',
-    category: 'drink'
-  },
-  {
-    name: 'name',
-    location: 'location',
-    date: 'date',
-    time: 'time',
-    restrict: ['nut', 'gluten', 'dairy'],
-    person: 'person',
-    contact: 'contact',
-    category: 'meal'
-  },
-  {
-    name: 'name',
-    location: 'location',
-    date: 'date',
-    time: 'time',
-    restrict: ['nut', 'gluten', 'dairy'],
-    person: 'person',
-    contact: 'contact',
-    category: 'meal'
-  },
-]
+
+let example: { name: string; description: string; location: string; date: string; time: string; restrict: string[]; person: string; contact: string; category: string; }[] = []
+
+
+
+
 class App extends Component {
   render() {
     return (
@@ -79,6 +37,7 @@ class App extends Component {
             <Route path="/reset" element={<Reset />} />
             <Route path="/register" element={<Register />} />
             <Route path="/feed" element={<ShowAll items={example} />} />
+            <Route path="/add" element={<AddPost />} />
           </Routes>
         </Router>
 

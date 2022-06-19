@@ -20,8 +20,8 @@ import vegan from '../media/vegan.png';
 import dog1 from '../media/dog1.png';
 
 const Tile = (
-    {name, location, date, time, restrict, person, contact, category} :
-    {name: string; location: string; date: string; time: string; restrict: string[]; person: string; contact: string; category: string}
+    { name, location, date, time, restrict, person, contact, category }:
+        { name: string; location: string; date: string; time: string; restrict: string[]; person: string; contact: string; category: string }
 ) => {
     return (
         <>
@@ -30,45 +30,45 @@ const Tile = (
                 <p className='person'>{person} | {contact}</p>
                 <div className='restrict'>
                     {/* restrictions: soy, dairy, veg, nut, gluten, vegan */}
-                   {/* {restrict.map((restriction) => {
+                    {/* {restrict.map((restriction) => {
                         return (
                             <img src={`../media/${restriction}.png`} className='restriction'/>)
                     })} */}
-                    {restrict.includes('soy') && 
-                        <img src={soy} alt='soy' className='restriction'/>
+                    {restrict.includes('soy') &&
+                        <img src={soy} alt='soy' className='restriction' />
                     }
-                    {restrict.includes('dairy') && 
-                        <img src={dairy} alt='dairy' className='restriction'/>
+                    {restrict.includes('dairy') &&
+                        <img src={dairy} alt='dairy' className='restriction' />
                     }
-                    {restrict.includes('veg') && 
-                        <img src={veg} alt='veg' className='restriction'/>
+                    {restrict.includes('veg') &&
+                        <img src={veg} alt='veg' className='restriction' />
                     }
-                    {restrict.includes('nut') && 
-                        <img src={nut} alt='nut' className='restriction'/>
+                    {restrict.includes('nut') &&
+                        <img src={nut} alt='nut' className='restriction' />
                     }
-                    {restrict.includes('gluten') && 
-                        <img src={gluten} alt='gluten' className='restriction'/>
+                    {restrict.includes('gluten') &&
+                        <img src={gluten} alt='gluten' className='restriction' />
                     }
-                    {restrict.includes('vegan') && 
-                        <img src={vegan} alt='vegan' className='restriction'/>
+                    {restrict.includes('vegan') &&
+                        <img src={vegan} alt='vegan' className='restriction' />
                     }
-                </div> 
+                </div>
             </div>
             {/* categories: meal, prod, dessert, drink, snack */}
-            {category === 'meal' && 
-                <img src={meal} alt='meal' className='category'/>
+            {category === 'meal' &&
+                <img src={meal} alt='meal' className='category' />
             }
-            {category === 'prod' && 
-                <img src={prod} alt='prod' className='category'/>
+            {category === 'prod' &&
+                <img src={prod} alt='prod' className='category' />
             }
-            {category === 'dessert' && 
-                <img src={dessert} alt='dessert' className='category'/>
+            {category === 'dessert' &&
+                <img src={dessert} alt='dessert' className='category' />
             }
-            {category === 'drink' && 
-                <img src={drink} alt='drink' className='category'/>
+            {category === 'drink' &&
+                <img src={drink} alt='drink' className='category' />
             }
-            {category === 'snack' && 
-                <img src={snack} alt='snack' className='category'/>
+            {category === 'snack' &&
+                <img src={snack} alt='snack' className='category' />
             }
             <div className='label'>
                 <p className='date'>{date}</p>
