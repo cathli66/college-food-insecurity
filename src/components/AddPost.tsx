@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 import Logout from '../components/Logout';
 import '../styles/AddPost.scss'
 import plant2 from '../media/plant.png'
+import rollcake from "../media/roll-cake.png"
 
 
 type Props = {};
@@ -104,6 +105,7 @@ export default class AddPost extends Component<Props, State> {
           <div className="navbar-nav mr-auto">
             <li className="nav-item">
               <p className='navlogo'>let's roll</p>
+              <img src={rollcake} className='rollcake' />
             </li>
             <li className="nav-item">
               <div className='logoutbtn'>

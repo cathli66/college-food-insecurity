@@ -8,6 +8,7 @@ import FoodPostData from "../types/post.type";
 import PostDataService from "../services/food-post.service";
 import firebase from "../firebase";
 import UserProfile from "./Profile"
+import rollcake from "../media/roll-cake.png"
 
 const Home = () => {
     const db = firebase.collection("/users");
@@ -55,6 +56,7 @@ const Home = () => {
                 <div className="navbar-nav mr-auto">
                     <li className="nav-item">
                         <p className='homelogo'>let's roll</p>
+                        <img src={rollcake} alt='shelf' className='roll'/>
                     </li>
                     <li className="nav-item">
                         <div className='helper'>
