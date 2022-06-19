@@ -1,0 +1,87 @@
+.formcard{
+    position: relative;
+    //margin: auto;
+    width: 1000px;
+    height: 670px;
+    //margin-top: 100px;
+    background-color: #FFF3DA;
+    border-radius: 15px;
+    padding-top: 20px;
+    right: 530px;
+    padding-left: 30px;
+}
+
+.navbar{
+    position: relative;
+    right: 600px;
+    align-items: center;
+    display: flex;
+}
+
+.nav-item{
+    position: relative;
+    top: 30px;
+    left: 750px;
+}
+
+.navlogo{
+    position: relative;
+    top: -20px;
+    font-weight: 700;
+    font-size: 50px;
+    color: #53301C;
+    right: 670px;
+}
+
+.head{
+    font-size: 25px;
+    line-height: 25px;
+    font-weight: 600px;
+    color: #53301C;
+}
+
+.colhead{
+    font-size: 20px;
+    line-height: 20px;
+    font-weight: 600px;
+    color: #986649 ;
+}
+
+.dietres{
+    position: relative;
+    bottom: 20px;
+}
+
+.cols{
+    align-items: top;
+    display: flex;
+    color: #986649;
+}
+
+.secondcol{
+    position: relative;
+    left: 100px;
+}
+
+.subbtn{
+    border-radius: 5px;
+    background-color: #986649;
+    border: none;
+    width: 390px;
+    height: 40px;
+    color: #FFFDF5;
+    font-weight: 600;
+    margin-bottom: 25px;
+}
+
+.fieldlabel{
+    padding-right: 10px;
+}
+
+ul{
+    padding-top: 5px;
+    position: relative;
+    right: 36px;
+    list-style-type: none;
+}
+

@@ -8,8 +8,8 @@ import ShowAll from '../pages/ShowAll'
 import FoodPostData from "../types/post.type";
 
 const Shelf = (
-    {name, items, isHome} :
-    {name: string; items: FoodPostData[]; isHome: boolean}
+    { name, items, isHome }:
+        { name: string; items: FoodPostData[]; isHome: boolean }
 ) => {
 
     // const navigate = useNavigate();

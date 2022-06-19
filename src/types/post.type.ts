@@ -1,5 +1,4 @@
 
-
 export default interface FoodPostData {
   id?: string | null,
   name: string,
@@ -10,6 +9,4 @@ export default interface FoodPostData {
   person: string,
   contact: string,
   category: string
-  // opento: string[],
-  // duration: string
 }
