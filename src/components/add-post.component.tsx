@@ -28,7 +28,7 @@ export default class AddPost extends Component<Props, State> {
       restrict: [],
       person: "",
       contact: "",
-      category: [],
+      category: "",
 
       submitted: false
     };
@@ -69,7 +69,7 @@ export default class AddPost extends Component<Props, State> {
       restrict: [],
       person: "",
       contact: "",
-      category: [],
+      category: "",
 
 
       submitted: false,

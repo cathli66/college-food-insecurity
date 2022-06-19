@@ -1,5 +1,6 @@
 import React from 'react';
 import '../styles/Tile.scss';
+import FoodPostData from "../types/post.type";
 
 // import category icons
 import meal from '../media/meal.png';
@@ -21,7 +22,7 @@ import dog1 from '../media/dog1.png';
 
 const Tile = (
     {name, location, date, time, restrict, person, contact, category} :
-    {name: string; location: string; date: string; time: string; restrict: string[]; person: string; contact: string; category: string}
+    FoodPostData
 ) => {
     return (
         <>
@@ -55,19 +56,19 @@ const Tile = (
                 </div> 
             </div>
             {/* categories: meal, prod, dessert, drink, snack */}
-            {category === 'meal' && 
+            {category.includes('meal') && 
                 <img src={meal} alt='meal' className='category'/>
             }
-            {category === 'prod' && 
+            {category.includes('prod') && 
                 <img src={prod} alt='prod' className='category'/>
             }
-            {category === 'dessert' && 
+            {category.includes('dessert') && 
                 <img src={dessert} alt='dessert' className='category'/>
             }
-            {category === 'drink' && 
+            {category.includes('drink') && 
                 <img src={drink} alt='drink' className='category'/>
             }
-            {category === 'snack' && 
+            {category.includes('snack') && 
                 <img src={snack} alt='snack' className='category'/>
             }
             <div className='label'>

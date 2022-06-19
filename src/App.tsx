@@ -14,76 +14,98 @@ import Reset from '../src/components/Reset';
 
 // import AddTutorial from "./components/add-tutorial.component";
 import AddPost from "./components/add-post.component";
-import TutorialsList from "./components/tutorials-list.component";
+// import TutorialsList from "./components/tutorials-list.component";
+import PostDataService from "./services/food-post.service";
+import FoodPostData from "./types/post.type";
 
-let example = [
-  {
-    name: 'name',
-    location: 'location',
-    date: 'date',
-    time: 'time',
-    restrict: ['nut', 'gluten', 'dairy'],
-    person: 'person',
-    contact: 'contact',
-    category: 'meal'
-  },
-  {
-    name: 'name',
-    location: 'location',
-    date: 'date',
-    time: 'time',
-    restrict: ['nut', 'gluten', 'dairy'],
-    person: 'person',
-    contact: 'contact',
-    category: 'snack'
-  },
-  {
-    name: 'name',
-    location: 'location',
-    date: 'date',
-    time: 'time',
-    restrict: ['nut', 'gluten', 'dairy'],
-    person: 'person',
-    contact: 'contact',
-    category: 'drink'
-  },
-  {
-    name: 'name',
-    location: 'location',
-    date: 'date',
-    time: 'time',
-    restrict: ['nut', 'gluten', 'dairy'],
-    person: 'person',
-    contact: 'contact',
-    category: 'meal'
-  },
-  {
-    name: 'name',
-    location: 'location',
-    date: 'date',
-    time: 'time',
-    restrict: ['nut', 'gluten', 'dairy'],
-    person: 'person',
-    contact: 'contact',
-    category: 'meal'
-  },
-]
-class App extends Component {
+// let example = [
+//   {
+//     name: 'name',
+//     location: 'location',
+//     date: 'date',
+//     time: 'time',
+//     restrict: ['nut', 'gluten', 'dairy'],
+//     person: 'person',
+//     contact: 'contact',
+//     category: ['meal']
+//   },
+//   {
+//     name: 'name',
+//     location: 'location',
+//     date: 'date',
+//     time: 'time',
+//     restrict: ['nut', 'gluten', 'dairy'],
+//     person: 'person',
+//     contact: 'contact',
+//     category: ['snack']
+//   },
+//   {
+//     name: 'name',
+//     location: 'location',
+//     date: 'date',
+//     time: 'time',
+//     restrict: ['nut', 'gluten', 'dairy'],
+//     person: 'person',
+//     contact: 'contact',
+//     category: ['drink']
+//   },
+//   {
+//     name: 'name',
+//     location: 'location',
+//     date: 'date',
+//     time: 'time',
+//     restrict: ['nut', 'gluten', 'dairy'],
+//     person: 'person',
+//     contact: 'contact',
+//     category: ['meal']
+//   },
+//   {
+//     name: 'name',
+//     location: 'location',
+//     date: 'date',
+//     time: 'time',
+//     restrict: ['nut', 'gluten', 'dairy'],
+//     person: 'person',
+//     contact: 'contact',
+//     category: ['meal']
+//   },
+// ]
+
+type Props = {};
+
+type State = {
+  data: FoodPostData[] | null
+};
+
+class App extends Component<Props, State> {
+  // constructor(props: Props) {
+  //   super(props);
+  //   this.state = {data: null};
+  // }
+
+  // componentDidMount() {
+  //   PostDataService.getAll().then(
+  //     (value: FoodPostData[]) => 
+  //     this.setState({ data: value })
+  //   );
+  // }
+
   render() {
-    return (
-      <div>
-        <Router>
-          <Routes>
-            <Route path="/" element={<Login />} />
-            <Route path="/home" element={<Home />} />
-            <Route path="/reset" element={<Reset />} />
-            <Route path="/register" element={<Register />} />
-            <Route path="/feed" element={<ShowAll items={example} />} />
-          </Routes>
-        </Router>
-
-
-        {/* <nav className="navbar navbar-expand navbar-dark bg-dark">
+      return (
+        <div>
+          <Router>
+            <Routes>
+              <Route path="/" element={<Login />} />
+              <Route path="/home" element={<Home />} />
+              <Route path="/reset" element={<Reset />} />
+              <Route path="/register" element={<Register />} />
+              <Route path="/feed" element={<ShowAll items_promise={PostDataService.getAll()} />} />
+            </Routes>
+          </Router>
+        </div>
+      );
+    }
+        /* <nav className="navbar navbar-expand navbar-dark bg-dark">
           <Link to={"/tutorials"} className="navbar-brand">
             bezKoder
           </Link>
@@ -107,10 +129,8 @@ class App extends Component {
             <Route exact path={["/", "/tutorials"]} component={TutorialsList} />
             <Route exact path="/add" component={AddPost} />
           </Routes>
-        </div> */}
-      </div>
-    );
+        </div> */
+      
   }
-}
 
 export default App;

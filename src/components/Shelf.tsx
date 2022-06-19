@@ -5,22 +5,11 @@ import useDrag from '../components/Drag';
 import wood from '../media/wood.png';
 import { Link, Route } from 'react-router-dom';
 import ShowAll from '../pages/ShowAll'
-
-type item = {
-    name: string, 
-    location: string, 
-    date: string, 
-    time: string, 
-    restrict: string[], 
-    person: string, 
-    contact: string, 
-    category: string
-}
-
+import FoodPostData from "../types/post.type";
 
 const Shelf = (
     {name, items, isHome} :
-    {name: string; items: item[]; isHome: boolean}
+    {name: string; items: FoodPostData[]; isHome: boolean}
 ) => {
 
     // const navigate = useNavigate();

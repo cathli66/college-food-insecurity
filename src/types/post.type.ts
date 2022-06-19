@@ -10,7 +10,7 @@ export default interface FoodPostData {
     restrict: string[],
     person: string,
     contact: string,
-    category: string[]
+    category: string
     // opento: string[],
     // duration: string
   }

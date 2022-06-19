@@ -1,21 +1,16 @@
 import Shelf from '../components/Shelf';
 import React, {useState} from 'react';
-
-type item = {
-    name: string, 
-    location: string, 
-    date: string, 
-    time: string, 
-    restrict: string[], 
-    person: string, 
-    contact: string, 
-    category: string
-}
+import FoodPostData from "../types/post.type";
+import PostDataService from "../services/food-post.service";
+import { useEffect } from 'react';
+import { getItemsPos } from 'react-horizontal-scrolling-menu';
 
 const ShowAll = (
-    {items} :
-    {items: item[]}
+    {items_promise} :
+    {items_promise: Promise<FoodPostData[]>}
 ) => {
+
+    const [items, setItems] = useState<FoodPostData[] | undefined>();
 
     const [restrict, setRestrict] = useState([
         'dairy', 
@@ -26,16 +21,31 @@ const ShowAll = (
         'vegan',
     ]);
 
+    useEffect(() => {
+        if(items == null) {
+            getItems();
+        }
+    })
+
+    const getItems = async () => {
+        const data = await items_promise;
+        setItems(data);
+    }
+
+    if(items == undefined) {
+        return <div>Loading... </div>
+    }
+
     const displayed = items.filter( i => {
         for (let n = 0; n < i.restrict.length; n++) {
             restrict.includes(i.restrict[n]);
         }
     })
 
-    const divshelves = (items: item[]) : item[][] => {
+    const divshelves = (items: FoodPostData[]) : FoodPostData[][] => {
         let counter = 0;
-        let finshelves : item[][] = [];
-        let currshelf : item[] = [];
+        let finshelves : FoodPostData[][] = [];
+        let currshelf : FoodPostData[] = [];
         // finshelves : item[][];
         for(let n = 0; n < items.length; n++) {
             currshelf.concat(items[n]);
@@ -50,7 +60,7 @@ const ShowAll = (
         return finshelves
     }
     
-    const shelves : item[][] = divshelves(displayed)
+    const shelves : FoodPostData[][] = divshelves(displayed)
 
     const updateRestrict = () => {}
 
