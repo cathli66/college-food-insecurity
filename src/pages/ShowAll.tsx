@@ -66,9 +66,8 @@ useEffect ( () => {
 
 
     let newDisplay : FoodPostData[] = [];
-    if (n.length === 0) {
-        newDisplay = items
-        setDisplayed(items)
+    if (n.length === 0 || items == undefined) {
+        getItems();
     } else {
         for (let i = 0; i < items.length; i++) {
             let count = n.length
@@ -124,7 +123,8 @@ useEffect ( () => {
     const getItems = async () => {
         const data = await items_promise;
         setItems(data);
-        setShelves(divshelves(data))
+        setShelves(divshelves(data));
+        setDisplayed(items);
     }
 
     if(items == undefined) {

@@ -30,17 +30,17 @@ const Shelf = (
             {isHome &&
                 <div className='info'>
                     <p className='shelfName'>{name}</p>
-                    {name === 'students' && 
+                    {name === 'Students' && 
                         <Link to='/feed/student' className='seeAll'> 
                             <p>see all</p>
                         </Link>
                     }
-                    {name === 'dining halls' && 
+                    {name === 'Dining Halls' && 
                         <Link to='/feed/dining' state={{items: items}} className='seeAll'> 
                             <p>see all</p>
                         </Link>
                     }
-                    {name === 'restaurants' && 
+                    {name === 'Restaurants' && 
                         <Link to='/feed/restaurant' state={{items: items}} className='seeAll'> 
                             <p>see all</p>
                         </Link>

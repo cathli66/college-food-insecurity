@@ -11,6 +11,8 @@ import Register from '../src/components/Register';
 import Reset from '../src/components/Reset';
 import AddPost from "./components/AddPost";
 import FoodPostData from "./types/post.type";
+import PostDataService from "./services/food-post.service";
+
 
 type Props = {}
 
@@ -29,10 +31,9 @@ class App extends Component<Props, State> {
               <Route path="/reset" element={<Reset />} />
               <Route path="/register" element={<Register />} />
               <Route path="/add" element={<AddPost />} />
-              <Route path="/feed/student" element={<ShowAll />} />
-              {/* <Route path="/feed/student" element={<ShowAll items={student}/>} />
-              <Route path="/feed/dining" element={<ShowAll items={dining}/>} />
-              <Route path="/feed/restaurant" element={<ShowAll items={restaurant}/>} /> */}
+              <Route path="/feed/student" element={<ShowAll items_promise={PostDataService.getAllStudent()}/>} />
+              <Route path="/feed/dining" element={<ShowAll items_promise={PostDataService.getAllHall()}/>} />
+              <Route path="/feed/restaurant" element={<ShowAll items_promise={PostDataService.getAllRestaurant()}/>} />
             </Routes>
           </Router>
         </div>
@@ -74,7 +75,7 @@ class App extends Component<Props, State> {
         </Router>
       </div>
     );
-  }
+  }  */
 
 }
 

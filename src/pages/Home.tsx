@@ -51,7 +51,6 @@ const Home = () => {
 
     return (
         <div className='homepage'>
-            <UserProfile />
             <nav className="navbar navbar-expand">
                 <div className="navbar-nav mr-auto">
                     <li className="nav-item">
@@ -77,6 +76,10 @@ const Home = () => {
                             </Link>
                         </div>
 
+                    </li>
+
+                    <li className="nav-item">
+                        <UserProfile />
                     </li>
 
                 </div>
