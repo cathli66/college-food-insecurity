@@ -5,12 +5,9 @@ import PostDataService from "../services/food-post.service";
 import { useEffect } from 'react';
 import { getItemsPos } from 'react-horizontal-scrolling-menu';
 
-const ShowAll = (
-    {items_promise} :
-    {items_promise: Promise<FoodPostData[]>}
-) => {
+const ShowAll = () => {
 
-    const [items, setItems] = useState<FoodPostData[] | undefined>();
+    const [studentItems, setStudentItems] = useState<FoodPostData[] | undefined>();
 
     const [restrict, setRestrict] = useState([
         'dairy',
@@ -22,21 +19,21 @@ const ShowAll = (
     ]);
 
     useEffect(() => {
-        if(items == null) {
-            getItems();
+        if(studentItems == null) {
+            getStudentItems();
         }
     })
 
-    const getItems = async () => {
-        const data = await items_promise;
-        setItems(data);
+    const getStudentItems = async () => {
+        const data = await PostDataService.getAllStudent();
+        setStudentItems(data);
     }
 
-    if(items == undefined) {
+    if(studentItems == undefined) {
         return <div>Loading... </div>
     }
 
-    const displayed = items.filter( i => {
+    const displayed = studentItems.filter( i => {
         for (let n = 0; n < i.restrict.length; n++) {
             restrict.includes(i.restrict[n]);
         }

@@ -7,7 +7,6 @@ import { Link, useNavigate } from "react-router-dom";
 import Logout from '../components/Logout';
 import FoodPostData from "../types/post.type";
 import PostDataService from "../services/food-post.service";
-import UserDataService from "../services/user-info.service";
 import UserData from "../types/user.type";
 import firebase from "../firebase";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
@@ -17,9 +16,13 @@ import { userInfo } from 'os';
 
 const Home = () => {
     // const auth = getAuth();
-    const [items, setItems] = useState<FoodPostData[] | undefined>();
+
     const db = firebase.collection("/users");
     const navigate = useNavigate();
+
+    const [studentItems, setStudentItems] = useState<FoodPostData[] | undefined>();
+    const [hallItems, setHallItems] = useState<FoodPostData[] | undefined>();
+    const [restItems, setRestItems] = useState<FoodPostData[] | undefined>();
 
     const auth = getAuth();
     const getUserInfo = async (id: string) => {
@@ -42,32 +45,70 @@ const Home = () => {
         }
     });
     useEffect(() => {
-        if (items == null) {
-            getItems();
+        if (studentItems == undefined) {
+            getStudentItems();
+        }
+        else if (hallItems == undefined) {
+            getHallItems();
+        }
+        else if (restItems == undefined) {
+            getRestItems();
         }
     })
 
-    const getItems = async () => {
-        const data = await PostDataService.getAll();
-        setItems(data);
+    const getStudentItems = async () => {
+        const data = await PostDataService.getAllStudent();
+        setStudentItems(data);
     }
 
-    if (items == undefined) {
+    const getHallItems = async () => {
+        const data = await PostDataService.getAllHall();
+        setHallItems(data);
+    }
+
+    const getRestItems = async () => {
+        const data = await PostDataService.getAllRestaurant();
+        setRestItems(data);
+    }
+
+    if (studentItems == undefined || hallItems == undefined || restItems == undefined) {
         return <div>Loading... </div>
     }
 
     return (
-        <div className='homepage'> <p className='title'>let's roll</p>
-            <Logout></Logout>
+        <div className='homepage'>
+            <nav className="navbar navbar-expand">
+                <div className="navbar-nav mr-auto">
+                    <li className="nav-item">
+                        <p className='title'>let's roll</p>
+                    </li>
+                    <li className="nav-item">
+                        <Logout></Logout>
+                    </li>
+                    <li className="nav-item">
+                        <Link to={"/home"} className="nav-link">
+                            Home
+                        </Link>
+                    </li>
+                    <li className="nav-item">
+                        <Link to={"/add"} className="nav-link">
+                            Add
+                        </Link>
+                    </li>
+                </div>
+            </nav>
 
             <div className='content'>
-                <div className='left'>
-                    <img className='plant' src={plant} alt='plant' />
-                </div>
-                <div className='right'>
-                    <Shelf name='Students' items={items} isHome={true} />
-                    <Shelf name='Dining Halls' items={items} isHome={true} />
-                    <Shelf name='Restaurants' items={items} isHome={true} />
+
+                <div className='content'>
+                    <div className='left'>
+                        <img className='plant' src={plant} alt='plant' />
+                    </div>
+                    <div className='right'>
+                        <Shelf name='Students' items={studentItems} isHome={true} />
+                        <Shelf name='Dining Halls' items={hallItems} isHome={true} />
+                        <Shelf name='Restaurants' items={restItems} isHome={true} />
+                    </div>
                 </div>
             </div>
         </div>
@@ -77,4 +118,4 @@ const Home = () => {
 
 }
 
-export default Home
+export default Home;

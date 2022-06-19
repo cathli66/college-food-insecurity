@@ -1,11 +1,16 @@
+import { timeStamp } from "console";
 import { ChangeEvent, Component } from "react";
 import { Navigate } from "react-router-dom";
 import PostDataService from "../services/food-post.service";
 import FoodPostData from '../types/post.type';
+import { Link } from "react-router-dom";
+import Logout from '../components/Logout';
+
 
 type Props = {};
 
 type State = FoodPostData & {
+  type: string,
   submitted: boolean
 };
 
@@ -14,12 +19,14 @@ export default class AddPost extends Component<Props, State> {
   checkedStateRestrict: any;
   restrictions: string[] = ["soy", "dairy", "veg", "nut", "gluten", "vegan"];
   categories: string[] = ["meal", "prod", "dessert", "drink", "snack"];
+  types: string[] = ["student", "dining hall", "restaurant"];
 
   constructor(props: Props) {
     super(props);
     this.savePost = this.savePost.bind(this);
     this.newPost = this.newPost.bind(this);
     this.onChangeCategory = this.onChangeCategory.bind(this);
+    this.onChangeType = this.onChangeType.bind(this);
 
     this.state = {
       name: "",
@@ -31,6 +38,7 @@ export default class AddPost extends Component<Props, State> {
       contact: "",
       category: "",
 
+      type: "",
       submitted: false
     };
   }
@@ -38,6 +46,12 @@ export default class AddPost extends Component<Props, State> {
   onChangeCategory(e: ChangeEvent<HTMLInputElement>) {
     this.setState({
       category: e.target.value,
+    });
+  }
+
+  onChangeType(e: ChangeEvent<HTMLInputElement>) {
+    this.setState({
+      type: e.target.value,
     });
   }
 
@@ -53,7 +67,7 @@ export default class AddPost extends Component<Props, State> {
       category: this.state.category
     };
 
-    PostDataService.create(data)
+    PostDataService.create(data, this.state.type)
       .then(() => {
         console.log("Created new item successfully!");
         this.setState({
@@ -76,24 +90,39 @@ export default class AddPost extends Component<Props, State> {
       contact: "",
       category: "",
 
-
+      type: "student",
       submitted: false,
     });
   }
 
-
-
-
-
-
   render() {
     return (
       <div className="submit-form">
+        <nav className="navbar navbar-expand">
+                <div className="navbar-nav mr-auto">
+                    <li className="nav-item">
+                        <p className='title'>let's roll</p>
+                    </li>
+                    <li className="nav-item">
+                        <Logout></Logout>
+                    </li>
+                    <li className="nav-item">
+                        <Link to={"/home"} className="nav-link">
+                            Home
+                        </Link>
+                    </li>
+                    <li className="nav-item">
+                        <Link to={"/add"} className="nav-link">
+                            Add
+                        </Link>
+                    </li>
+                </div>
+            </nav>
         {this.state.submitted ? (
           <div>
             <h4>You submitted successfully!</h4>
             <button className="btn btn-success" onClick={this.newPost}>
-              Add
+              Add Another
             </button>
           </div>
         ) : (
@@ -129,7 +158,6 @@ export default class AddPost extends Component<Props, State> {
 
               }
 
-
               this.setState({
                 name: target.name.value,
                 location: target.location.value,
@@ -139,7 +167,8 @@ export default class AddPost extends Component<Props, State> {
                 person: target.person.value,
                 contact: target.contact.value,
                 category: this.state.category,
-
+                
+                type: this.state.type,
                 submitted: true
               }, () => this.savePost());
             }
@@ -149,12 +178,6 @@ export default class AddPost extends Component<Props, State> {
               <label>
                 Event Name:
                 <input type="text" name="name" required />
-              </label>
-            </div>
-            <div>
-              <label>
-                Description:
-                <input type="text" name="description" required />
               </label>
             </div>
             <div>
@@ -190,7 +213,6 @@ export default class AddPost extends Component<Props, State> {
                             value={name}
                             checked={this.state.category === name}
                             onChange={this.onChangeCategory}
-
                           />
                           <label htmlFor={name}>{name}</label>
                         </div>
@@ -229,6 +251,30 @@ export default class AddPost extends Component<Props, State> {
               <label>
                 Your Name:
                 <input type="text" name="person" required />
+              </label>
+            </div>
+            <div>
+              <label>
+                Who are you posting as?
+                <ul className="type-list">
+                  {this.types.map((name, index) => {
+                    return (
+                      <li key={index}>
+                        <div className="type-list-item">
+                          <input
+                            type="radio"
+                            id={name}
+                            name={name}
+                            value={name}
+                            checked={this.state.type === name}
+                            onChange={this.onChangeType}
+                          />
+                          <label htmlFor={name}>{name}</label>
+                        </div>
+                      </li>
+                    );
+                  })}
+                </ul>
               </label>
             </div>
             <div>
