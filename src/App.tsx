@@ -1,12 +1,16 @@
 import { Component } from "react";
-import { Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import './App.css';
 import '../src/components/Shelf';
 import '../src/components/Tile';
 import Home from '../src/pages/Home';
 import ShowAll from '../src/pages/ShowAll';
+import Login from '../src/components/Login';
 
+import Register from '../src/components/Register';
+
+import Reset from '../src/components/Reset';
 
 // import AddTutorial from "./components/add-tutorial.component";
 import AddPost from "./components/add-post.component";
@@ -14,63 +18,71 @@ import TutorialsList from "./components/tutorials-list.component";
 
 let example = [
   {
-      name: 'name', 
-      location: 'location', 
-      date: 'date', 
-      time: 'time', 
-      restrict: ['nut', 'gluten', 'dairy'], 
-      person: 'person', 
-      contact: 'contact', 
-      category: 'meal'
+    name: 'name',
+    location: 'location',
+    date: 'date',
+    time: 'time',
+    restrict: ['nut', 'gluten', 'dairy'],
+    person: 'person',
+    contact: 'contact',
+    category: 'meal'
   },
   {
-      name: 'name', 
-      location: 'location', 
-      date: 'date', 
-      time: 'time', 
-      restrict: ['nut', 'gluten', 'dairy'], 
-      person: 'person', 
-      contact: 'contact', 
-      category: 'snack'
+    name: 'name',
+    location: 'location',
+    date: 'date',
+    time: 'time',
+    restrict: ['nut', 'gluten', 'dairy'],
+    person: 'person',
+    contact: 'contact',
+    category: 'snack'
   },
   {
-      name: 'name', 
-      location: 'location', 
-      date: 'date', 
-      time: 'time', 
-      restrict: ['nut', 'gluten', 'dairy'], 
-      person: 'person', 
-      contact: 'contact', 
-      category: 'drink'
+    name: 'name',
+    location: 'location',
+    date: 'date',
+    time: 'time',
+    restrict: ['nut', 'gluten', 'dairy'],
+    person: 'person',
+    contact: 'contact',
+    category: 'drink'
   },
   {
-      name: 'name', 
-      location: 'location', 
-      date: 'date', 
-      time: 'time', 
-      restrict: ['nut', 'gluten', 'dairy'], 
-      person: 'person', 
-      contact: 'contact', 
-      category: 'meal'
+    name: 'name',
+    location: 'location',
+    date: 'date',
+    time: 'time',
+    restrict: ['nut', 'gluten', 'dairy'],
+    person: 'person',
+    contact: 'contact',
+    category: 'meal'
   },
   {
-      name: 'name', 
-      location: 'location', 
-      date: 'date', 
-      time: 'time', 
-      restrict: ['nut', 'gluten', 'dairy'], 
-      person: 'person', 
-      contact: 'contact', 
-      category: 'meal'
+    name: 'name',
+    location: 'location',
+    date: 'date',
+    time: 'time',
+    restrict: ['nut', 'gluten', 'dairy'],
+    person: 'person',
+    contact: 'contact',
+    category: 'meal'
   },
 ]
 class App extends Component {
   render() {
     return (
       <div>
-        <p className='title'>let's roll</p>
-        <Home/>
-        <ShowAll items={example}/>
+        <Router>
+          <Routes>
+            <Route path="/" element={<Login />} />
+            <Route path="/home" element={<Home />} />
+            <Route path="/reset" element={<Reset />} />
+            <Route path="/register" element={<Register />} />
+            <Route path="/feed" element={<ShowAll items={example} />} />
+          </Routes>
+        </Router>
+
+
         {/* <nav className="navbar navbar-expand navbar-dark bg-dark">
           <Link to={"/tutorials"} className="navbar-brand">
             bezKoder
