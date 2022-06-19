@@ -1,58 +1,65 @@
 import Shelf from '../components/Shelf';
 import React, {useState} from 'react';
+import FoodPostData from "../types/post.type";
+import PostDataService from "../services/food-post.service";
+import { useEffect } from 'react';
+import { getItemsPos } from 'react-horizontal-scrolling-menu';
 
-type item = {
-    name: string, 
-    location: string, 
-    date: string, 
-    time: string, 
-    restrict: string[], 
-    person: string, 
-    contact: string, 
-    category: string
-}
+const ShowAll = () => {
 
-const ShowAll = (
-    {items} :
-    {items: item[]}
-) => {
+    const [studentItems, setStudentItems] = useState<FoodPostData[] | undefined>();
 
     const [restrict, setRestrict] = useState([
-        'dairy', 
-        'soy', 
-        'veg', 
-        'nut', 
-        'gluten', 
+        'dairy',
+        'soy',
+        'veg',
+        'nut',
+        'gluten',
         'vegan',
     ]);
 
-    const displayed = items.filter( i => {
+    useEffect(() => {
+        if(studentItems == null) {
+            getStudentItems();
+        }
+    })
+
+    const getStudentItems = async () => {
+        const data = await PostDataService.getAllStudent();
+        setStudentItems(data);
+    }
+
+    if(studentItems == undefined) {
+        return <div>Loading... </div>
+    }
+
+    const displayed = studentItems.filter( i => {
         for (let n = 0; n < i.restrict.length; n++) {
             restrict.includes(i.restrict[n]);
         }
     })
 
-    const divshelves = (items: item[]) : item[][] => {
+    const divshelves = (items: FoodPostData[]) : FoodPostData[][] => {
         let counter = 0;
-        let finshelves : item[][] = [];
-        let currshelf : item[] = [];
+        let finshelves : FoodPostData[][] = [];
+        let currshelf : FoodPostData[] = [];
         // finshelves : item[][];
-        for(let n = 0; n < items.length; n++) {
+        for (let n = 0; n < items.length; n++) {
             currshelf.concat(items[n]);
             counter++;
-            if(counter === 3) {
+            if (counter === 3) {
                 counter = 0;
                 finshelves.concat(currshelf);
                 currshelf = [];
             }
         }
-        if(counter > 0) {finshelves.concat(currshelf)}
+        if (counter > 0) { finshelves.concat(currshelf) }
         return finshelves
     }
     
-    const shelves : item[][] = divshelves(displayed)
+    const shelves : FoodPostData[][] = divshelves(displayed)
 
-    const updateRestrict = () => {}
+    const updateRestrict = () => { }
 
     return (
         <>
@@ -61,61 +68,61 @@ const ShowAll = (
                 <div className="dietFilters">
                     <p>Dietary Restrictions</p>
                     <input
-                    type="checkbox"
-                    name='dairy'
-                    value='dairy free'
+                        type="checkbox"
+                        name='dairy'
+                        value='dairy free'
                     // checked={checkedState[index]}
                     // onChange={() => updateRestrict('dairy')}
                     />
                     dairy free
                     <input
-                    type="checkbox"
-                    // name='dairy'
-                    value='soy free'
+                        type="checkbox"
+                        // name='dairy'
+                        value='soy free'
                     // checked={checkedState[index]}
                     // onChange={() => updateRestrict('soy')}
                     />
                     <input
-                    type="checkbox"
-                    // name='dairy'
-                    value='vegetarian'
+                        type="checkbox"
+                        // name='dairy'
+                        value='vegetarian'
                     // checked={checkedState[index]}
                     // onChange={() => updateRestrict('veg')}
                     />
                     <input
-                    type="checkbox"
-                    // name='dairy'
-                    value='vegan'
+                        type="checkbox"
+                        // name='dairy'
+                        value='vegan'
                     // checked={checkedState[index]}
                     // onChange={() => updateRestrict('vegan')}
                     />
                     <input
-                    type="checkbox"
-                    // name='dairy'
-                    value='nut free'
+                        type="checkbox"
+                        // name='dairy'
+                        value='nut free'
                     // checked={checkedState[index]}
                     // onChange={() => updateRestrict('nut')}
                     />
                     <input
-                    type="checkbox"
-                    // name='dairy'
-                    value='gluten free'
+                        type="checkbox"
+                        // name='dairy'
+                        value='gluten free'
                     // checked={checkedState[index]}
                     // onChange={() => updateRestrict('gluten')}
                     />
                 </div>
                 <div className='foodFilters'>
                     <p>Food Categories</p>
-                        
+
                 </div>
             </div>
             <div className='shelves'>
                 {shelves.map((sublist) => {
-                        return (
-                            <div className='tile'> 
-                                <Shelf items={sublist} name='' isHome={false}/>
-                            </div>
-                        )
+                    return (
+                        <div className='tile'>
+                            <Shelf items={sublist} name='' isHome={false} />
+                        </div>
+                    )
                 })}
             </div>
         </>
